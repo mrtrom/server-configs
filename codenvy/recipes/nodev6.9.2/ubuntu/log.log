@@ -1,0 +1,2725 @@
+Sending build context to Docker daemon 7.168 kBSending build context to Docker daemon 7.168 kB
+Step 1 : FROM eclipse/ubuntu_jre
+ ---> 640600c6a294
+Step 2 : MAINTAINER mrtrom <ochoaseguralex@gmail.com>
+ ---> Running in 16546006976d
+ ---> 0b84815f5a74
+Removing intermediate container 16546006976d
+Step 3 : ENV NODE_VERSION 6.9.2 NVM_DIR /usr/local/nvm REDIS_VERSION 3.2.0 REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-3.2.0.tar.gz REDIS_DOWNLOAD_SHA1 0c1820931094369c8cc19fc1be62f598bc5961ca
+ ---> Running in 0fd018c7b44c
+ ---> 54ca49192930
+Removing intermediate container 0fd018c7b44c
+Step 4 : RUN sudo rm /bin/sh &&     sudo ln -s /bin/bash /bin/sh
+ ---> Running in 6f630ee85b04
+ ---> ea77d1200d9b
+Removing intermediate container 6f630ee85b04
+Step 5 : RUN sudo apt-get update &&     sudo apt-get -y install build-essential libssl-dev libkrb5-dev gcc make ruby-full rubygems-integration python &&     sudo gem install sass compass &&     sudo apt-get clean &&     sudo apt-get -y autoremove &&     sudo apt-get -y clean &&     sudo rm -rf /var/lib/apt/lists/*
+ ---> Running in d95225db40ea
+Get:1 http://ppa.launchpad.net trusty InRelease [15.4 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:3 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:4 http://ppa.launchpad.net trusty/main amd64 Packages [3,419 B]
+Get:5 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:6 http://archive.ubuntu.com trusty-updates/main Sources [480 kB]
+Get:7 http://archive.ubuntu.com trusty-updates/restricted Sources [5,921 B]
+Get:8 http://archive.ubuntu.com trusty-updates/universe Sources [214 kB]
+Get:9 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1,160 kB]
+Get:10 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [20.4 kB]
+Get:11 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [505 kB]
+Get:12 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:13 http://archive.ubuntu.com trusty-security/main Sources [157 kB]
+Get:14 http://archive.ubuntu.com trusty-security/restricted Sources [4,621 B]
+Get:15 http://archive.ubuntu.com trusty-security/universe Sources [54.5 kB]
+Get:16 http://archive.ubuntu.com trusty-security/main amd64 Packages [700 kB]
+Get:17 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [17.0 kB]
+Get:18 http://archive.ubuntu.com trusty-security/universe amd64 Packages [191 kB]
+Get:19 http://archive.ubuntu.com trusty/main Sources [1,335 kB]
+Get:20 http://archive.ubuntu.com trusty/restricted Sources [5,335 B]
+Get:21 http://archive.ubuntu.com trusty/universe Sources [7,926 kB]
+Get:22 http://archive.ubuntu.com trusty/main amd64 Packages [1,743 kB]
+Get:23 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:24 http://archive.ubuntu.com trusty/universe amd64 Packages [7,589 kB]
+Fetched 22.3 MB in 16s (1,349 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+python is already the newest version.
+python set to manually installed.
+The following extra packages will be installed:
+  binutils comerr-dev cpp cpp-4.8 dpkg-dev fakeroot fontconfig-config
+  fonts-dejavu-core g++ g++-4.8 gcc-4.8 krb5-multidev libalgorithm-diff-perl
+  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan0 libatomic1
+  libc-dev-bin libc6-dev libcloog-isl4 libdpkg-perl libfakeroot
+  libfile-fcntllock-perl libfontconfig1 libfreetype6 libgcc-4.8-dev libgmp10
+  libgomp1 libgssrpc4 libisl10 libitm1 libkadm5clnt-mit9 libkadm5srv-mit9
+  libkdb5-7 libmpc3 libmpfr4 libquadmath0 libruby1.9.1 libruby1.9.1-dbg
+  libssl-doc libstdc++-4.8-dev libtcl8.5 libtcltk-ruby1.9.1 libtimedate-perl
+  libtk8.5 libtsan0 libxft2 libxrender1 libxss1 libyaml-0-2 linux-libc-dev
+  manpages manpages-dev ri1.9.1 ruby ruby1.9.1 ruby1.9.1-dev
+  ruby1.9.1-examples ruby1.9.1-full x11-common zlib1g-dev
+Suggested packages:
+  binutils-doc doc-base cpp-doc gcc-4.8-locales debian-keyring g++-multilib
+  g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg gcc-multilib autoconf
+  automake1.9 libtool flex bison gdb gcc-doc gcc-4.8-multilib libgcc1-dbg
+  libgomp1-dbg libitm1-dbg libatomic1-dbg libasan0-dbg libtsan0-dbg
+  libquadmath0-dbg krb5-doc glibc-doc krb5-user libstdc++-4.8-doc tcl8.5 tk8.5
+  make-doc man-browser ri ruby-dev graphviz ruby-switch bundler
+The following NEW packages will be installed:
+  binutils build-essential comerr-dev cpp cpp-4.8 dpkg-dev fakeroot
+  fontconfig-config fonts-dejavu-core g++ g++-4.8 gcc gcc-4.8 krb5-multidev
+  libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl
+  libasan0 libatomic1 libc-dev-bin libc6-dev libcloog-isl4 libdpkg-perl
+  libfakeroot libfile-fcntllock-perl libfontconfig1 libfreetype6
+  libgcc-4.8-dev libgmp10 libgomp1 libgssrpc4 libisl10 libitm1
+  libkadm5clnt-mit9 libkadm5srv-mit9 libkdb5-7 libkrb5-dev libmpc3 libmpfr4
+  libquadmath0 libruby1.9.1 libruby1.9.1-dbg libssl-dev libssl-doc
+  libstdc++-4.8-dev libtcl8.5 libtcltk-ruby1.9.1 libtimedate-perl libtk8.5
+  libtsan0 libxft2 libxrender1 libxss1 libyaml-0-2 linux-libc-dev make
+  manpages manpages-dev ri1.9.1 ruby ruby-full ruby1.9.1 ruby1.9.1-dev
+  ruby1.9.1-examples ruby1.9.1-full rubygems-integration x11-common zlib1g-dev
+0 upgraded, 68 newly installed, 0 to remove and 31 not upgraded.
+Need to get 56.5 MB of archives.
+After this operation, 180 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libasan0 amd64 4.8.4-2ubuntu1~14.04.3 [63.1 kB]
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libatomic1 amd64 4.8.4-2ubuntu1~14.04.3 [8,636 B]
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main libgmp10 amd64 2:5.1.3+dfsg-1ubuntu1 [218 kB]
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main libisl10 amd64 0.12.2-1 [419 kB]
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main libcloog-isl4 amd64 0.18.2-1 [57.5 kB]
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main fonts-dejavu-core all 2.34-1ubuntu1 [1,024 kB]
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main fontconfig-config all 2.11.0-0ubuntu4.2 [47.4 kB]
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libfreetype6 amd64 2.5.2-1ubuntu2.5 [304 kB]
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libfontconfig1 amd64 2.11.0-0ubuntu4.2 [123 kB]
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgomp1 amd64 4.8.4-2ubuntu1~14.04.3 [23.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgssrpc4 amd64 1.12+dfsg-2ubuntu5.2 [53.1 kB]
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libitm1 amd64 4.8.4-2ubuntu1~14.04.3 [28.5 kB]
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkadm5clnt-mit9 amd64 1.12+dfsg-2ubuntu5.2 [36.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkdb5-7 amd64 1.12+dfsg-2ubuntu5.2 [36.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkadm5srv-mit9 amd64 1.12+dfsg-2ubuntu5.2 [50.4 kB]
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty/main libmpfr4 amd64 3.1.2-1 [203 kB]
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libquadmath0 amd64 4.8.4-2ubuntu1~14.04.3 [126 kB]
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty/main libtcl8.5 amd64 8.5.15-2ubuntu1 [684 kB]
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libxrender1 amd64 1:0.9.8-1build0.14.04.1 [17.9 kB]
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty/main libxft2 amd64 2.3.1-2 [36.2 kB]
+Get:21 http://archive.ubuntu.com/ubuntu/ trusty-updates/main x11-common all 1:7.7+1ubuntu8.1 [49.5 kB]
+Get:22 http://archive.ubuntu.com/ubuntu/ trusty/main libxss1 amd64 1:1.2.2-1 [8,582 B]
+Get:23 http://archive.ubuntu.com/ubuntu/ trusty/main libtk8.5 amd64 8.5.15-2ubuntu3 [641 kB]
+Get:24 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libtsan0 amd64 4.8.4-2ubuntu1~14.04.3 [94.9 kB]
+Get:25 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libyaml-0-2 amd64 0.1.4-3ubuntu3.1 [48.1 kB]
+Get:26 http://archive.ubuntu.com/ubuntu/ trusty/main libmpc3 amd64 1.0.1-1ubuntu1 [38.4 kB]
+Get:27 http://archive.ubuntu.com/ubuntu/ trusty/main manpages all 3.54-1ubuntu1 [627 kB]
+Get:28 http://archive.ubuntu.com/ubuntu/ trusty-updates/main binutils amd64 2.24-5ubuntu14.1 [2,081 kB]
+Get:29 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc-dev-bin amd64 2.19-0ubuntu6.9 [69.0 kB]
+Get:30 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-libc-dev amd64 3.13.0-105.152 [772 kB]
+Get:31 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libc6-dev amd64 2.19-0ubuntu6.9 [1,910 kB]
+Get:32 http://archive.ubuntu.com/ubuntu/ trusty-updates/main cpp-4.8 amd64 4.8.4-2ubuntu1~14.04.3 [4,595 kB]
+Get:33 http://archive.ubuntu.com/ubuntu/ trusty/main cpp amd64 4:4.8.2-1ubuntu6 [27.5 kB]
+Get:34 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libgcc-4.8-dev amd64 4.8.4-2ubuntu1~14.04.3 [1,688 kB]
+Get:35 http://archive.ubuntu.com/ubuntu/ trusty-updates/main gcc-4.8 amd64 4.8.4-2ubuntu1~14.04.3 [5,047 kB]
+Get:36 http://archive.ubuntu.com/ubuntu/ trusty/main gcc amd64 4:4.8.2-1ubuntu6 [5,098 B]
+Get:37 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libstdc++-4.8-dev amd64 4.8.4-2ubuntu1~14.04.3 [1,053 kB]
+Get:38 http://archive.ubuntu.com/ubuntu/ trusty-updates/main g++-4.8 amd64 4.8.4-2ubuntu1~14.04.3 [18.1 MB]
+Get:39 http://archive.ubuntu.com/ubuntu/ trusty/main g++ amd64 4:4.8.2-1ubuntu6 [1,490 B]
+Get:40 http://archive.ubuntu.com/ubuntu/ trusty/main make amd64 3.81-8.2ubuntu3 [119 kB]
+Get:41 http://archive.ubuntu.com/ubuntu/ trusty/main libtimedate-perl all 2.3000-1 [37.2 kB]
+Get:42 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libdpkg-perl all 1.17.5ubuntu5.7 [179 kB]
+Get:43 http://archive.ubuntu.com/ubuntu/ trusty-updates/main dpkg-dev all 1.17.5ubuntu5.7 [726 kB]
+Get:44 http://archive.ubuntu.com/ubuntu/ trusty/main build-essential amd64 11.6ubuntu6 [4,838 B]
+Get:45 http://archive.ubuntu.com/ubuntu/ trusty/main libfakeroot amd64 1.20-3ubuntu2 [25.4 kB]
+Get:46 http://archive.ubuntu.com/ubuntu/ trusty/main fakeroot amd64 1.20-3ubuntu2 [55.0 kB]
+Get:47 http://archive.ubuntu.com/ubuntu/ trusty-updates/main comerr-dev amd64 2.1-1.42.9-3ubuntu1.3 [38.3 kB]
+Get:48 http://archive.ubuntu.com/ubuntu/ trusty-updates/main krb5-multidev amd64 1.12+dfsg-2ubuntu5.2 [111 kB]
+Get:49 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-perl all 1.19.02-3 [50.0 kB]
+Get:50 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-diff-xs-perl amd64 0.04-2build4 [12.6 kB]
+Get:51 http://archive.ubuntu.com/ubuntu/ trusty/main libalgorithm-merge-perl all 0.08-2 [12.7 kB]
+Get:52 http://archive.ubuntu.com/ubuntu/ trusty/main libfile-fcntllock-perl amd64 0.14-2build1 [15.9 kB]
+Get:53 http://archive.ubuntu.com/ubuntu/ trusty/main ruby all 1:1.9.3.4 [5,334 B]
+Get:54 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [35.6 kB]
+Get:55 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [2,645 kB]
+Get:56 http://archive.ubuntu.com/ubuntu/ trusty/main zlib1g-dev amd64 1:1.2.8.dfsg-1ubuntu1 [183 kB]
+Get:57 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-dev amd64 1.0.1f-1ubuntu2.21 [1,074 kB]
+Get:58 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libssl-doc all 1.0.1f-1ubuntu2.21 [971 kB]
+Get:59 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe libtcltk-ruby1.9.1 amd64 1.9.3.484-2ubuntu1.2 [1,399 kB]
+Get:60 http://archive.ubuntu.com/ubuntu/ trusty/main manpages-dev all 3.54-1ubuntu1 [1,820 kB]
+Get:61 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe ri1.9.1 all 1.9.3.484-2ubuntu1.2 [1,511 kB]
+Get:62 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libruby1.9.1-dbg amd64 1.9.3.484-2ubuntu1.2 [4,076 kB]
+Get:63 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1-dev amd64 1.9.3.484-2ubuntu1.2 [871 kB]
+Get:64 http://archive.ubuntu.com/ubuntu/ trusty-updates/main ruby1.9.1-examples all 1.9.3.484-2ubuntu1.2 [66.3 kB]
+Get:65 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe ruby1.9.1-full all 1.9.3.484-2ubuntu1.2 [2,944 B]
+Get:66 http://archive.ubuntu.com/ubuntu/ trusty/universe ruby-full all 1:1.9.3.4 [4,584 B]
+Get:67 http://archive.ubuntu.com/ubuntu/ trusty/main rubygems-integration all 1.5 [5,340 B]
+Get:68 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libkrb5-dev amd64 1.12+dfsg-2ubuntu5.2 [14.4 kB]
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 56.5 MB in 37s (1,524 kB/s)
+Selecting previously unselected package libasan0:amd64.
+(Reading database ... 18402 files and directories currently installed.)
+Preparing to unpack .../libasan0_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libasan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libatomic1:amd64.
+Preparing to unpack .../libatomic1_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libatomic1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libgmp10:amd64.
+Preparing to unpack .../libgmp10_2%3a5.1.3+dfsg-1ubuntu1_amd64.deb ...
+Unpacking libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Selecting previously unselected package libisl10:amd64.
+Preparing to unpack .../libisl10_0.12.2-1_amd64.deb ...
+Unpacking libisl10:amd64 (0.12.2-1) ...
+Selecting previously unselected package libcloog-isl4:amd64.
+Preparing to unpack .../libcloog-isl4_0.18.2-1_amd64.deb ...
+Unpacking libcloog-isl4:amd64 (0.18.2-1) ...
+Selecting previously unselected package fonts-dejavu-core.
+Preparing to unpack .../fonts-dejavu-core_2.34-1ubuntu1_all.deb ...
+Unpacking fonts-dejavu-core (2.34-1ubuntu1) ...
+Selecting previously unselected package fontconfig-config.
+Preparing to unpack .../fontconfig-config_2.11.0-0ubuntu4.2_all.deb ...
+Unpacking fontconfig-config (2.11.0-0ubuntu4.2) ...
+Selecting previously unselected package libfreetype6:amd64.
+Preparing to unpack .../libfreetype6_2.5.2-1ubuntu2.5_amd64.deb ...
+Unpacking libfreetype6:amd64 (2.5.2-1ubuntu2.5) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../libfontconfig1_2.11.0-0ubuntu4.2_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.11.0-0ubuntu4.2) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../libgomp1_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libgomp1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libgssrpc4:amd64.
+Preparing to unpack .../libgssrpc4_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking libgssrpc4:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../libitm1_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libitm1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libkadm5clnt-mit9:amd64.
+Preparing to unpack .../libkadm5clnt-mit9_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking libkadm5clnt-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Selecting previously unselected package libkdb5-7:amd64.
+Preparing to unpack .../libkdb5-7_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking libkdb5-7:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Selecting previously unselected package libkadm5srv-mit9:amd64.
+Preparing to unpack .../libkadm5srv-mit9_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking libkadm5srv-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Selecting previously unselected package libmpfr4:amd64.
+Preparing to unpack .../libmpfr4_3.1.2-1_amd64.deb ...
+Unpacking libmpfr4:amd64 (3.1.2-1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../libquadmath0_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libtcl8.5:amd64.
+Preparing to unpack .../libtcl8.5_8.5.15-2ubuntu1_amd64.deb ...
+Unpacking libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Selecting previously unselected package libxrender1:amd64.
+Preparing to unpack .../libxrender1_1%3a0.9.8-1build0.14.04.1_amd64.deb ...
+Unpacking libxrender1:amd64 (1:0.9.8-1build0.14.04.1) ...
+Selecting previously unselected package libxft2:amd64.
+Preparing to unpack .../libxft2_2.3.1-2_amd64.deb ...
+Unpacking libxft2:amd64 (2.3.1-2) ...
+Selecting previously unselected package x11-common.
+Preparing to unpack .../x11-common_1%3a7.7+1ubuntu8.1_all.deb ...
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0mUnpacking x11-common (1:7.7+1ubuntu8.1) ...
+Selecting previously unselected package libxss1:amd64.
+Preparing to unpack .../libxss1_1%3a1.2.2-1_amd64.deb ...
+Unpacking libxss1:amd64 (1:1.2.2-1) ...
+Selecting previously unselected package libtk8.5:amd64.
+Preparing to unpack .../libtk8.5_8.5.15-2ubuntu3_amd64.deb ...
+Unpacking libtk8.5:amd64 (8.5.15-2ubuntu3) ...
+Selecting previously unselected package libtsan0:amd64.
+Preparing to unpack .../libtsan0_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libtsan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package libyaml-0-2:amd64.
+Preparing to unpack .../libyaml-0-2_0.1.4-3ubuntu3.1_amd64.deb ...
+Unpacking libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../libmpc3_1.0.1-1ubuntu1_amd64.deb ...
+Unpacking libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Selecting previously unselected package manpages.
+Preparing to unpack .../manpages_3.54-1ubuntu1_all.deb ...
+Unpacking manpages (3.54-1ubuntu1) ...
+Selecting previously unselected package binutils.
+Preparing to unpack .../binutils_2.24-5ubuntu14.1_amd64.deb ...
+Unpacking binutils (2.24-5ubuntu14.1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../libc-dev-bin_2.19-0ubuntu6.9_amd64.deb ...
+Unpacking libc-dev-bin (2.19-0ubuntu6.9) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../linux-libc-dev_3.13.0-105.152_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (3.13.0-105.152) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../libc6-dev_2.19-0ubuntu6.9_amd64.deb ...
+Unpacking libc6-dev:amd64 (2.19-0ubuntu6.9) ...
+Selecting previously unselected package cpp-4.8.
+Preparing to unpack .../cpp-4.8_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking cpp-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../cpp_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking cpp (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libgcc-4.8-dev:amd64.
+Preparing to unpack .../libgcc-4.8-dev_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package gcc-4.8.
+Preparing to unpack .../gcc-4.8_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking gcc-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../gcc_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking gcc (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package libstdc++-4.8-dev:amd64.
+Preparing to unpack .../libstdc++-4.8-dev_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package g++-4.8.
+Preparing to unpack .../g++-4.8_4.8.4-2ubuntu1~14.04.3_amd64.deb ...
+Unpacking g++-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_amd64.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package make.
+Preparing to unpack .../make_3.81-8.2ubuntu3_amd64.deb ...
+Unpacking make (3.81-8.2ubuntu3) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../libtimedate-perl_2.3000-1_all.deb ...
+Unpacking libtimedate-perl (2.3000-1) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../libdpkg-perl_1.17.5ubuntu5.7_all.deb ...
+Unpacking libdpkg-perl (1.17.5ubuntu5.7) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../dpkg-dev_1.17.5ubuntu5.7_all.deb ...
+Unpacking dpkg-dev (1.17.5ubuntu5.7) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_amd64.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../libfakeroot_1.20-3ubuntu2_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.20-3ubuntu2) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../fakeroot_1.20-3ubuntu2_amd64.deb ...
+Unpacking fakeroot (1.20-3ubuntu2) ...
+Selecting previously unselected package comerr-dev.
+Preparing to unpack .../comerr-dev_2.1-1.42.9-3ubuntu1.3_amd64.deb ...
+Unpacking comerr-dev (2.1-1.42.9-3ubuntu1.3) ...
+Selecting previously unselected package krb5-multidev.
+Preparing to unpack .../krb5-multidev_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking krb5-multidev (1.12+dfsg-2ubuntu5.2) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../libalgorithm-diff-perl_1.19.02-3_all.deb ...
+Unpacking libalgorithm-diff-perl (1.19.02-3) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-2build4_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-2build4) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../libalgorithm-merge-perl_0.08-2_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-2) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../libfile-fcntllock-perl_0.14-2build1_amd64.deb ...
+Unpacking libfile-fcntllock-perl (0.14-2build1) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_1%3a1.9.3.4_all.deb ...
+Unpacking ruby (1:1.9.3.4) ...
+Selecting previously unselected package ruby1.9.1.
+Preparing to unpack .../ruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package libruby1.9.1.
+Preparing to unpack .../libruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-1ubuntu1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
+Selecting previously unselected package libssl-dev:amd64.
+Preparing to unpack .../libssl-dev_1.0.1f-1ubuntu2.21_amd64.deb ...
+Unpacking libssl-dev:amd64 (1.0.1f-1ubuntu2.21) ...
+Selecting previously unselected package libssl-doc.
+Preparing to unpack .../libssl-doc_1.0.1f-1ubuntu2.21_all.deb ...
+Unpacking libssl-doc (1.0.1f-1ubuntu2.21) ...
+Selecting previously unselected package libtcltk-ruby1.9.1.
+Preparing to unpack .../libtcltk-ruby1.9.1_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking libtcltk-ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../manpages-dev_3.54-1ubuntu1_all.deb ...
+Unpacking manpages-dev (3.54-1ubuntu1) ...
+Selecting previously unselected package ri1.9.1.
+Preparing to unpack .../ri1.9.1_1.9.3.484-2ubuntu1.2_all.deb ...
+Unpacking ri1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package libruby1.9.1-dbg.
+Preparing to unpack .../libruby1.9.1-dbg_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking libruby1.9.1-dbg (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package ruby1.9.1-dev.
+Preparing to unpack .../ruby1.9.1-dev_1.9.3.484-2ubuntu1.2_amd64.deb ...
+Unpacking ruby1.9.1-dev (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package ruby1.9.1-examples.
+Preparing to unpack .../ruby1.9.1-examples_1.9.3.484-2ubuntu1.2_all.deb ...
+Unpacking ruby1.9.1-examples (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package ruby1.9.1-full.
+Preparing to unpack .../ruby1.9.1-full_1.9.3.484-2ubuntu1.2_all.deb ...
+Unpacking ruby1.9.1-full (1.9.3.484-2ubuntu1.2) ...
+Selecting previously unselected package ruby-full.
+Preparing to unpack .../ruby-full_1%3a1.9.3.4_all.deb ...
+Unpacking ruby-full (1:1.9.3.4) ...
+Selecting previously unselected package rubygems-integration.
+Preparing to unpack .../rubygems-integration_1.5_all.deb ...
+Unpacking rubygems-integration (1.5) ...
+Selecting previously unselected package libkrb5-dev.
+Preparing to unpack .../libkrb5-dev_1.12+dfsg-2ubuntu5.2_amd64.deb ...
+Unpacking libkrb5-dev (1.12+dfsg-2ubuntu5.2) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up libasan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libatomic1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Setting up libisl10:amd64 (0.12.2-1) ...
+Setting up libcloog-isl4:amd64 (0.18.2-1) ...
+Setting up fonts-dejavu-core (2.34-1ubuntu1) ...
+Setting up fontconfig-config (2.11.0-0ubuntu4.2) ...
+Setting up libfreetype6:amd64 (2.5.2-1ubuntu2.5) ...
+Setting up libfontconfig1:amd64 (2.11.0-0ubuntu4.2) ...
+Setting up libgomp1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libgssrpc4:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Setting up libitm1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libkadm5clnt-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Setting up libkdb5-7:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Setting up libkadm5srv-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Setting up libmpfr4:amd64 (3.1.2-1) ...
+Setting up libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Setting up libxrender1:amd64 (1:0.9.8-1build0.14.04.1) ...
+Setting up libxft2:amd64 (2.3.1-2) ...
+Setting up x11-common (1:7.7+1ubuntu8.1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91minvoke-rc.d: policy-rc.d denied execution of start.
+[0mSetting up libtsan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up libyaml-0-2:amd64 (0.1.4-3ubuntu3.1) ...
+Setting up libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Setting up manpages (3.54-1ubuntu1) ...
+Setting up binutils (2.24-5ubuntu14.1) ...
+Setting up libc-dev-bin (2.19-0ubuntu6.9) ...
+Setting up linux-libc-dev:amd64 (3.13.0-105.152) ...
+Setting up libc6-dev:amd64 (2.19-0ubuntu6.9) ...
+Setting up cpp-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up cpp (4:4.8.2-1ubuntu6) ...
+Setting up libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up gcc-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up gcc (4:4.8.2-1ubuntu6) ...
+Setting up libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up g++-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up make (3.81-8.2ubuntu3) ...
+Setting up libtimedate-perl (2.3000-1) ...
+Setting up libdpkg-perl (1.17.5ubuntu5.7) ...
+Setting up dpkg-dev (1.17.5ubuntu5.7) ...
+Setting up build-essential (11.6ubuntu6) ...
+Setting up libfakeroot:amd64 (1.20-3ubuntu2) ...
+Setting up fakeroot (1.20-3ubuntu2) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up comerr-dev (2.1-1.42.9-3ubuntu1.3) ...
+Setting up krb5-multidev (1.12+dfsg-2ubuntu5.2) ...
+Setting up libalgorithm-diff-perl (1.19.02-3) ...
+Setting up libalgorithm-diff-xs-perl (0.04-2build4) ...
+Setting up libalgorithm-merge-perl (0.08-2) ...
+Setting up libfile-fcntllock-perl (0.14-2build1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
+Setting up libssl-dev:amd64 (1.0.1f-1ubuntu2.21) ...
+Setting up libssl-doc (1.0.1f-1ubuntu2.21) ...
+Setting up manpages-dev (3.54-1ubuntu1) ...
+Setting up ruby1.9.1-examples (1.9.3.484-2ubuntu1.2) ...
+Setting up libkrb5-dev (1.12+dfsg-2ubuntu5.2) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up libxss1:amd64 (1:1.2.2-1) ...
+Setting up libtk8.5:amd64 (8.5.15-2ubuntu3) ...
+Setting up ruby (1:1.9.3.4) ...
+Setting up libruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Setting up libtcltk-ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Setting up libruby1.9.1-dbg (1.9.3.484-2ubuntu1.2) ...
+Setting up ruby1.9.1-dev (1.9.3.484-2ubuntu1.2) ...
+Setting up rubygems-integration (1.5) ...
+Setting up ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Setting up ri1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Setting up ruby1.9.1-full (1.9.3.484-2ubuntu1.2) ...
+Setting up ruby-full (1:1.9.3.4) ...
+Processing triggers for libc-bin (2.19-0ubuntu6.9) ...
+Successfully installed sass-3.4.22
+Building native extensions.  This could take a while...
+    Compass is charityware. If you love it, please donate on our behalf at http://umdf.org/compass Thanks!
+Successfully installed multi_json-1.12.1
+Successfully installed compass-core-1.0.3
+Successfully installed compass-import-once-1.0.5
+Successfully installed chunky_png-1.3.8
+Successfully installed rb-fsevent-0.9.8
+Successfully installed ffi-1.9.14
+Successfully installed rb-inotify-0.9.7
+Successfully installed compass-1.0.3
+9 gems installed
+Installing ri documentation for sass-3.4.22...
+Installing ri documentation for multi_json-1.12.1...
+Installing ri documentation for compass-core-1.0.3...
+Installing ri documentation for compass-import-once-1.0.5...
+Installing ri documentation for chunky_png-1.3.8...
+Installing ri documentation for rb-fsevent-0.9.8...
+Installing ri documentation for ffi-1.9.14...
+Installing ri documentation for rb-inotify-0.9.7...
+Installing ri documentation for compass-1.0.3...
+Installing RDoc documentation for sass-3.4.22...
+Installing RDoc documentation for multi_json-1.12.1...
+Installing RDoc documentation for compass-core-1.0.3...
+Installing RDoc documentation for compass-import-once-1.0.5...
+Installing RDoc documentation for chunky_png-1.3.8...
+Installing RDoc documentation for rb-fsevent-0.9.8...
+Installing RDoc documentation for ffi-1.9.14...
+Installing RDoc documentation for rb-inotify-0.9.7...
+Installing RDoc documentation for compass-1.0.3...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+ ---> 3bebfaf835d3
+Removing intermediate container d95225db40ea
+Step 6 : RUN sudo mkdir $NVM_DIR &&     sudo chown -R $(whoami) $NVM_DIR &&     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash &&     source $NVM_DIR/nvm.sh &&     nvm install $NODE_VERSION &&     nvm alias default $NODE_VERSION &&     nvm use default &&     npm install -g npm@latest &&     npm install --unsafe-perm -g gulp gulp-cli bower grunt grunt-cli bunyan yo generator-angular-fullstack
+ ---> Running in 0d8c76387325
+[91m [0m[91m [0m[91m%[0m[91m [0m[91mT[0m[91mo[0m[91mt[0m[91ma[0m[91ml[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m%[0m[91m [0m[91mReceived % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m[0m[91m [0m[91m [0m[91m0[0m[91m [0m[91m [0m[91m [0m[91m  0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m[0m[91m1[0m[91m0[0m[91m0[0m[91m [0m[91m1[0m[91m0[0m[91m2[0m[91m5[0m[91m0[0m[91m [0m[91m [0m[91m1[0m[91m0[0m[91m0 10250    0     0  21885      0 --:--:-- --:--:-- --:--:-- 21855
+[0m=> Downloading nvm from git to '/usr/local/nvm'
+=> [91mCloning into '/usr/local/nvm'...
+[0m* (HEAD detached at v0.32.1)
+  master
+=> Compressing and cleaning up git repository
+
+=> Appending source string to /home/user/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="/usr/local/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[91m[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m                                                                       0.0%[0m[91m[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m                                                                    0.8%[0m[91m[0m[91m#[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m                                                                    2.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m [0m[91m                                                                   5.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m [0m[91m [0m[91m                                                                    7.9%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##                                                                   10.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#                                                                 13.7%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m [0m[91m                                                             17.7%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#########                                                             18.9%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m###########                                                          23.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#######                                                        26.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#############                                                     29.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m###########                                                   32.1%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##################                        [0m[91m                         34.9%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##################                                               37.7%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#####################                                             40.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m########################                                           43.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m######################                                         46.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##########################                                       49.3%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##########################                                      50.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m###################################                                   55.4%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#############################                                 58.2%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m###############################                               60.7%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#####################################                             63.7%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#######################################                           66.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#########################################                         69.4%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m############################################                      72.2%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##########################################                     74.0%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##################################################                   77.0%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m######################################################                [0m[91m [0m[91m79.8%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m##################################################               82.8%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m###################################################              84.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#####################################################           87.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m########################################################          90.0%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#########################################################        92.9%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#########################################################      95.2%[0m[91m[0m[91m#[0m[91m#[0m[91m###########[0m[91m#[0m[91m#[0m[91m#######################################################    97.5%[0m[91m[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m#[0m[91m############################################################## 100.0%[0m[91m
+[0m[91mComputing checksum with sha256sum
+[0m[91mChecksums matched!
+[0mNow using node v6.9.2 (npm v3.10.9)
+Creating default alias: default -> 6.9.2 (-> v6.9.2 *)
+default -> 6.9.2 (-> v6.9.2 *)
+Now using node v6.9.2 (npm v3.10.9)
+/usr/local/nvm/versions/node/v6.9.2/bin/npm -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/npm/bin/npm-cli.js
+- retry@0.10.0 node_modules/npm/node_modules/npm-registry-client/node_modules/retry
+- number-is-nan@1.0.0 node_modules/npm/node_modules/npmlog/node_modules/gauge/node_modules/string-width/node_modules/code-point-at/node_modules/number-is-nan
+- core-util-is@1.0.2 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/core-util-is
+- isarray@1.0.0 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray
+- process-nextick-args@1.0.7 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args
+- string_decoder@0.10.31 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/string_decoder
+- util-deprecate@1.0.2 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/util-deprecate
+- readable-stream@2.0.6 node_modules/npm/node_modules/request/node_modules/bl/node_modules/readable-stream
+- bl@1.1.2 node_modules/npm/node_modules/request/node_modules/bl
+/usr/local/nvm/versions/node/v6.9.2/lib
+└─┬ npm@4.0.3 
+  ├── glob@7.1.1 
+  ├── graceful-fs@4.1.10 
+  ├── inflight@1.0.6 
+  ├─┬ JSONStream@1.2.1 
+  │ ├── jsonparse@1.2.0 
+  │ └── through@2.3.8 
+  ├─┬ mississippi@1.2.0 
+  │ ├─┬ concat-stream@1.5.2 
+  │ │ ├─┬ readable-stream@2.0.6 
+  │ │ │ ├── core-util-is@1.0.2 
+  │ │ │ ├── isarray@1.0.0 
+  │ │ │ ├── process-nextick-args@1.0.7 
+  │ │ │ ├── string_decoder@0.10.31 
+  │ │ │ └── util-deprecate@1.0.2 
+  │ │ └── typedarray@0.0.6 
+  │ ├─┬ duplexify@3.4.5 
+  │ │ ├─┬ end-of-stream@1.0.0 
+  │ │ │ └── once@1.3.3 
+  │ │ └── stream-shift@1.0.0 
+  │ ├─┬ end-of-stream@1.1.0 
+  │ │ └── once@1.3.3 
+  │ ├── flush-write-stream@1.0.0 
+  │ ├── from2@2.3.0 
+  │ ├── pump@1.0.1 
+  │ ├── pumpify@1.3.5 
+  │ ├── stream-each@1.1.2 
+  │ └─┬ through2@2.0.1 
+  │   ├─┬ readable-stream@2.0.6 
+  │   │ ├── core-util-is@1.0.2 
+  │   │ ├── isarray@1.0.0 
+  │   │ ├── process-nextick-args@1.0.7 
+  │   │ ├── string_decoder@0.10.31 
+  │   │ └── util-deprecate@1.0.2 
+  │   └── xtend@4.0.1 
+  ├─┬ node-gyp@3.4.0
+  │ └─┬ npmlog@3.1.2
+  │   └─┬ gauge@2.6.0
+  │     └── signal-exit@3.0.1 
+  ├─┬ npm-registry-client@7.3.0 
+  │ └─┬ npmlog@3.1.2
+  │   └─┬ gauge@2.6.0
+  │     ├── signal-exit@3.0.1 
+  │     └─┬ string-width@1.0.2
+  │       ├─┬ code-point-at@1.0.1 
+  │       │ └── number-is-nan@1.0.1 
+  │       └─┬ is-fullwidth-code-point@1.0.0
+  │         └── number-is-nan@1.0.1 
+  ├─┬ npmlog@4.0.1 
+  │ └─┬ gauge@2.7.1 
+  │   ├── signal-exit@3.0.1 
+  │   └─┬ string-width@1.0.2
+  │     ├── code-point-at@1.1.0 
+  │     └─┬ is-fullwidth-code-point@1.0.0
+  │       └── number-is-nan@1.0.1 
+  ├── readable-stream@2.2.2 
+  ├─┬ request@2.78.0 
+  │ ├── aws4@1.5.0 
+  │ ├── form-data@2.1.1 
+  │ ├── qs@6.3.0 
+  │ └─┬ tough-cookie@2.3.2 
+  │   └── punycode@1.4.1 
+  ├─┬ sorted-union-stream@2.1.3 
+  │ ├─┬ from2@1.3.0 
+  │ │ └─┬ readable-stream@1.1.14 
+  │ │   ├── core-util-is@1.0.2 
+  │ │   ├── isarray@0.0.1 
+  │ │   └── string_decoder@0.10.31 
+  │ └── stream-iterate@1.1.1 
+  └── which@1.2.12 
+
+[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mdeprecated[0m[91m minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mdeprecated[0m[91m minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mdeprecated[0m[91m graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+[0m[91mnpm[0m[91m [0m[91mWARN[0m[91m [0m[91mdeprecated[0m[91m npmconf@2.1.2: this package has been reintegrated into npm and is now out of date with respect to npm
+[0m/usr/local/nvm/versions/node/v6.9.2/bin/bower -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/bower/bin/bower
+/usr/local/nvm/versions/node/v6.9.2/bin/bunyan -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/bunyan/bin/bunyan
+/usr/local/nvm/versions/node/v6.9.2/bin/grunt -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/grunt-cli/bin/grunt
+/usr/local/nvm/versions/node/v6.9.2/bin/grunt -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/grunt/bin/grunt
+/usr/local/nvm/versions/node/v6.9.2/bin/gulp -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/gulp-cli/bin/gulp.js
+/usr/local/nvm/versions/node/v6.9.2/bin/gulp -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/gulp/bin/gulp.js
+/usr/local/nvm/versions/node/v6.9.2/bin/yo -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/yo/lib/cli.js
+/usr/local/nvm/versions/node/v6.9.2/bin/yo-complete -> /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/yo/lib/completion/index.js
+
+> dtrace-provider@0.8.0 install /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/bunyan/node_modules/dtrace-provider
+> node scripts/install.js
+
+
+> spawn-sync@1.0.15 postinstall /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/generator-angular-fullstack/node_modules/spawn-sync
+> node postinstall
+
+
+> spawn-sync@1.0.15 postinstall /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/yo/node_modules/spawn-sync
+> node postinstall
+
+
+> yo@1.8.5 postinstall /usr/local/nvm/versions/node/v6.9.2/lib/node_modules/yo
+> yodoctor
+
+
+Yeoman Doctor
+Running sanity checks on your system
+
+✔ Global configuration file is valid
+✔ NODE_PATH matches the npm root
+✔ Node.js version
+✔ No .bowerrc file in home directory
+✔ No .yo-rc.json file in home directory
+✔ npm version
+
+Everything looks all right!
+/usr/local/nvm/versions/node/v6.9.2/lib
+├── bower@1.8.0 
+├─┬ bunyan@1.8.5 
+│ ├─┬ dtrace-provider@0.8.0 
+│ │ └── nan@2.4.0 
+│ ├── moment@2.17.1 
+│ ├─┬ mv@2.1.1 
+│ │ ├─┬ mkdirp@0.5.1 
+│ │ │ └── minimist@0.0.8 
+│ │ ├── ncp@2.0.0 
+│ │ └─┬ rimraf@2.4.5 
+│ │   └─┬ glob@6.0.4 
+│ │     ├─┬ inflight@1.0.6 
+│ │     │ └── wrappy@1.0.2 
+│ │     ├── inherits@2.0.3 
+│ │     ├─┬ minimatch@3.0.3 
+│ │     │ └─┬ brace-expansion@1.1.6 
+│ │     │   ├── balanced-match@0.4.2 
+│ │     │   └── concat-map@0.0.1 
+│ │     ├── once@1.4.0 
+│ │     └── path-is-absolute@1.0.1 
+│ └── safe-json-stringify@1.0.3 
+├─┬ generator-angular-fullstack@4.1.1 
+│ ├─┬ babel-core@6.20.0 
+│ │ ├─┬ babel-code-frame@6.20.0 
+│ │ │ ├── esutils@2.0.2 
+│ │ │ └── js-tokens@2.0.0 
+│ │ ├─┬ babel-generator@6.20.0 
+│ │ │ ├─┬ detect-indent@4.0.0 
+│ │ │ │ └─┬ repeating@2.0.1 
+│ │ │ │   └── is-finite@1.0.2 
+│ │ │ └── jsesc@1.3.0 
+│ │ ├── babel-helpers@6.16.0 
+│ │ ├── babel-messages@6.8.0 
+│ │ ├─┬ babel-runtime@6.20.0 
+│ │ │ └── regenerator-runtime@0.10.1 
+│ │ ├── babel-template@6.16.0 
+│ │ ├─┬ babel-traverse@6.20.0 
+│ │ │ ├── globals@9.14.0 
+│ │ │ └─┬ invariant@2.2.2 
+│ │ │   └── loose-envify@1.3.0 
+│ │ ├─┬ babel-types@6.20.0 
+│ │ │ └── to-fast-properties@1.0.2 
+│ │ ├── babylon@6.14.1 
+│ │ ├── convert-source-map@1.3.0 
+│ │ ├─┬ debug@2.3.3 
+│ │ │ └── ms@0.7.2 
+│ │ ├── json5@0.5.1 
+│ │ ├─┬ minimatch@3.0.3 
+│ │ │ └─┬ brace-expansion@1.1.6 
+│ │ │   ├── balanced-match@0.4.2 
+│ │ │   └── concat-map@0.0.1 
+│ │ ├── path-is-absolute@1.0.1 
+│ │ ├── private@0.1.6 
+│ │ ├── slash@1.0.0 
+│ │ └── source-map@0.5.6 
+│ ├─┬ babel-eslint@7.1.1 
+│ │ └── lodash.pickby@4.6.0 
+│ ├── babel-plugin-syntax-class-properties@6.13.0 
+│ ├── babel-plugin-syntax-flow@6.18.0 
+│ ├── babel-plugin-transform-flow-strip-types@6.18.0 
+│ ├─┬ babel-register@6.18.0 
+│ │ ├── core-js@2.4.1 
+│ │ ├─┬ home-or-tmp@2.0.0 
+│ │ │ ├── os-homedir@1.0.2 
+│ │ │ └── os-tmpdir@1.0.2 
+│ │ ├─┬ mkdirp@0.5.1 
+│ │ │ └── minimist@0.0.8 
+│ │ └── source-map-support@0.4.6 
+│ ├── bluebird@3.4.6 
+│ ├─┬ chalk@1.1.3 
+│ │ ├── ansi-styles@2.2.1 
+│ │ ├── escape-string-regexp@1.0.5 
+│ │ ├─┬ has-ansi@2.0.0 
+│ │ │ └── ansi-regex@2.0.0 
+│ │ ├── strip-ansi@3.0.1 
+│ │ └── supports-color@2.0.0 
+│ ├─┬ generator-ng-component@1.0.5 
+│ │ └─┬ yeoman-generator@0.23.4 
+│ │   ├── cross-spawn@3.0.1 
+│ │   ├─┬ download@4.4.3 
+│ │   │ ├─┬ caw@1.2.0 
+│ │   │ │ ├─┬ get-proxy@1.1.0 
+│ │   │ │ │ └─┬ rc@1.1.6 
+│ │   │ │ │   └── minimist@1.2.0 
+│ │   │ │ ├── is-obj@1.0.1 
+│ │   │ │ └── object-assign@3.0.0 
+│ │   │ ├─┬ each-async@1.1.1 
+│ │   │ │ ├── onetime@1.1.0 
+│ │   │ │ └── set-immediate-shim@1.0.1 
+│ │   │ ├─┬ filenamify@1.2.1 
+│ │   │ │ ├── filename-reserved-regex@1.0.0 
+│ │   │ │ ├── strip-outer@1.0.0 
+│ │   │ │ └── trim-repeated@1.0.0 
+│ │   │ ├─┬ got@5.7.1 
+│ │   │ │ ├─┬ create-error-class@3.0.2 
+│ │   │ │ │ └── capture-stack-trace@1.0.0 
+│ │   │ │ ├── duplexer2@0.1.4 
+│ │   │ │ ├── is-redirect@1.0.0 
+│ │   │ │ ├── is-retry-allowed@1.1.0 
+│ │   │ │ ├── is-stream@1.1.0 
+│ │   │ │ ├── lowercase-keys@1.0.0 
+│ │   │ │ ├── node-status-codes@1.0.0 
+│ │   │ │ ├── object-assign@4.1.0 
+│ │   │ │ ├─┬ parse-json@2.2.0 
+│ │   │ │ │ └─┬ error-ex@1.3.0 
+│ │   │ │ │   └── is-arrayish@0.2.1 
+│ │   │ │ ├── timed-out@3.0.0 
+│ │   │ │ ├── unzip-response@1.0.2 
+│ │   │ │ └─┬ url-parse-lax@1.0.0 
+│ │   │ │   └── prepend-http@1.0.4 
+│ │   │ ├─┬ gulp-decompress@1.2.0 
+│ │   │ │ ├─┬ archive-type@3.2.0 
+│ │   │ │ │ └── file-type@3.9.0 
+│ │   │ │ └─┬ decompress@3.0.0 
+│ │   │ │   ├── buffer-to-vinyl@1.1.0 
+│ │   │ │   ├─┬ decompress-tar@3.1.0 
+│ │   │ │   │ ├── is-tar@1.0.0 
+│ │   │ │   │ ├─┬ strip-dirs@1.1.1 
+│ │   │ │   │ │ ├─┬ is-absolute@0.1.7 
+│ │   │ │   │ │ │ └── is-relative@0.1.3 
+│ │   │ │   │ │ ├── is-natural-number@2.1.1 
+│ │   │ │   │ │ ├── minimist@1.2.0 
+│ │   │ │   │ │ └── sum-up@1.0.3 
+│ │   │ │   │ ├─┬ tar-stream@1.5.2 
+│ │   │ │   │ │ ├─┬ bl@1.1.2 
+│ │   │ │   │ │ │ └── readable-stream@2.0.6 
+│ │   │ │   │ │ └── end-of-stream@1.1.0 
+│ │   │ │   │ ├─┬ through2@0.6.5 
+│ │   │ │   │ │ └─┬ readable-stream@1.0.34 
+│ │   │ │   │ │   └── isarray@0.0.1 
+│ │   │ │   │ └─┬ vinyl@0.4.6 
+│ │   │ │   │   └── clone@0.2.0 
+│ │   │ │   ├─┬ decompress-tarbz2@3.1.0 
+│ │   │ │   │ ├── is-bzip2@1.0.0 
+│ │   │ │   │ ├─┬ seek-bzip@1.0.5 
+│ │   │ │   │ │ └── commander@2.8.1 
+│ │   │ │   │ ├─┬ through2@0.6.5 
+│ │   │ │   │ │ └─┬ readable-stream@1.0.34 
+│ │   │ │   │ │   └── isarray@0.0.1 
+│ │   │ │   │ └─┬ vinyl@0.4.6 
+│ │   │ │   │   └── clone@0.2.0 
+│ │   │ │   ├─┬ decompress-targz@3.1.0 
+│ │   │ │   │ ├── is-gzip@1.0.0 
+│ │   │ │   │ ├─┬ through2@0.6.5 
+│ │   │ │   │ │ └─┬ readable-stream@1.0.34 
+│ │   │ │   │ │   └── isarray@0.0.1 
+│ │   │ │   │ └─┬ vinyl@0.4.6 
+│ │   │ │   │   └── clone@0.2.0 
+│ │   │ │   ├─┬ decompress-unzip@3.4.0 
+│ │   │ │   │ ├── is-zip@1.0.0 
+│ │   │ │   │ ├── stat-mode@0.2.2 
+│ │   │ │   │ └─┬ yauzl@2.7.0 
+│ │   │ │   │   ├── buffer-crc32@0.2.13 
+│ │   │ │   │   └─┬ fd-slicer@1.0.1 
+│ │   │ │   │     └── pend@1.2.0 
+│ │   │ │   └─┬ vinyl-assign@1.2.1 
+│ │   │ │     └── object-assign@4.1.0 
+│ │   │ ├── gulp-rename@1.2.2 
+│ │   │ ├── is-url@1.2.2 
+│ │   │ ├── object-assign@4.1.0 
+│ │   │ ├── read-all-stream@3.1.0 
+│ │   │ ├── stream-combiner2@1.1.1 
+│ │   │ ├─┬ vinyl-fs@2.4.4 
+│ │   │ │ ├─┬ duplexify@3.5.0 
+│ │   │ │ │ ├── end-of-stream@1.0.0 
+│ │   │ │ │ └── stream-shift@1.0.0 
+│ │   │ │ ├─┬ glob-stream@5.3.5 
+│ │   │ │ │ ├── glob@5.0.15 
+│ │   │ │ │ ├─┬ glob-parent@3.0.1 
+│ │   │ │ │ │ ├─┬ is-glob@3.1.0 
+│ │   │ │ │ │ │ └── is-extglob@2.1.1 
+│ │   │ │ │ │ └── path-dirname@1.0.2 
+│ │   │ │ │ ├─┬ micromatch@2.3.11 
+│ │   │ │ │ │ ├─┬ arr-diff@2.0.0 
+│ │   │ │ │ │ │ └── arr-flatten@1.0.1 
+│ │   │ │ │ │ ├── array-unique@0.2.1 
+│ │   │ │ │ │ ├─┬ braces@1.8.5 
+│ │   │ │ │ │ │ ├─┬ expand-range@1.8.2 
+│ │   │ │ │ │ │ │ └─┬ fill-range@2.2.3 
+│ │   │ │ │ │ │ │   ├── is-number@2.1.0 
+│ │   │ │ │ │ │ │   ├── isobject@2.1.0 
+│ │   │ │ │ │ │ │   ├── randomatic@1.1.6 
+│ │   │ │ │ │ │ │   └── repeat-string@1.6.1 
+│ │   │ │ │ │ │ ├── preserve@0.2.0 
+│ │   │ │ │ │ │ └── repeat-element@1.1.2 
+│ │   │ │ │ │ ├─┬ expand-brackets@0.1.5 
+│ │   │ │ │ │ │ └── is-posix-bracket@0.1.1 
+│ │   │ │ │ │ ├─┬ extglob@0.3.2 
+│ │   │ │ │ │ │ └── is-extglob@1.0.0 
+│ │   │ │ │ │ ├── filename-regex@2.0.0 
+│ │   │ │ │ │ ├── is-extglob@1.0.0 
+│ │   │ │ │ │ ├── is-glob@2.0.1 
+│ │   │ │ │ │ ├─┬ kind-of@3.1.0 
+│ │   │ │ │ │ │ └── is-buffer@1.1.4 
+│ │   │ │ │ │ ├── normalize-path@2.0.1 
+│ │   │ │ │ │ ├─┬ object.omit@2.0.1 
+│ │   │ │ │ │ │ ├─┬ for-own@0.1.4 
+│ │   │ │ │ │ │ │ └── for-in@0.1.6 
+│ │   │ │ │ │ │ └── is-extendable@0.1.1 
+│ │   │ │ │ │ ├─┬ parse-glob@3.0.4 
+│ │   │ │ │ │ │ ├─┬ glob-base@0.3.0 
+│ │   │ │ │ │ │ │ ├── glob-parent@2.0.0 
+│ │   │ │ │ │ │ │ └─┬ is-glob@2.0.1 
+│ │   │ │ │ │ │ │   └── is-extglob@1.0.0 
+│ │   │ │ │ │ │ ├── is-dotfile@1.0.2 
+│ │   │ │ │ │ │ ├── is-extglob@1.0.0 
+│ │   │ │ │ │ │ └── is-glob@2.0.1 
+│ │   │ │ │ │ └─┬ regex-cache@0.4.3 
+│ │   │ │ │ │   ├── is-equal-shallow@0.1.3 
+│ │   │ │ │ │   └── is-primitive@2.0.0 
+│ │   │ │ │ ├── ordered-read-streams@0.3.0 
+│ │   │ │ │ ├─┬ through2@0.6.5 
+│ │   │ │ │ │ └─┬ readable-stream@1.0.34 
+│ │   │ │ │ │   └── isarray@0.0.1 
+│ │   │ │ │ ├─┬ to-absolute-glob@0.1.1 
+│ │   │ │ │ │ └── extend-shallow@2.0.1 
+│ │   │ │ │ └── unique-stream@2.2.1 
+│ │   │ │ ├── gulp-sourcemaps@1.6.0 
+│ │   │ │ ├── is-valid-glob@0.3.0 
+│ │   │ │ ├── lazystream@1.0.0 
+│ │   │ │ ├── lodash.isequal@4.4.0 
+│ │   │ │ ├── merge-stream@1.0.1 
+│ │   │ │ ├── object-assign@4.1.0 
+│ │   │ │ ├─┬ strip-bom@2.0.0 
+│ │   │ │ │ └── is-utf8@0.2.1 
+│ │   │ │ ├─┬ strip-bom-stream@1.0.0 
+│ │   │ │ │ └── first-chunk-stream@1.0.0 
+│ │   │ │ ├── through2-filter@2.0.0 
+│ │   │ │ └── vali-date@1.0.0 
+│ │   │ └─┬ ware@1.3.0 
+│ │   │   └─┬ wrap-fn@0.1.5 
+│ │   │     └── co@3.1.0 
+│ │   ├── istextorbinary@1.0.2 
+│ │   └── xdg-basedir@2.0.0 
+│ ├─┬ glob@7.1.1 
+│ │ ├── fs.realpath@1.0.0 
+│ │ ├─┬ inflight@1.0.6 
+│ │ │ └── wrappy@1.0.2 
+│ │ ├── inherits@2.0.3 
+│ │ └── once@1.3.3 
+│ ├─┬ gulp-babel@6.1.2 
+│ │ ├─┬ gulp-util@3.0.7 
+│ │ │ ├── array-differ@1.0.0 
+│ │ │ ├── array-uniq@1.0.3 
+│ │ │ ├── beeper@1.1.1 
+│ │ │ ├─┬ fancy-log@1.2.0 
+│ │ │ │ └── time-stamp@1.0.1 
+│ │ │ ├─┬ gulplog@1.0.0 
+│ │ │ │ └── glogg@1.0.0 
+│ │ │ ├─┬ has-gulplog@0.1.0 
+│ │ │ │ └── sparkles@1.0.0 
+│ │ │ ├── lodash._reescape@3.0.0 
+│ │ │ ├── lodash._reevaluate@3.0.0 
+│ │ │ ├── lodash._reinterpolate@3.0.0 
+│ │ │ ├─┬ lodash.template@3.6.2 
+│ │ │ │ ├── lodash._basecopy@3.0.1 
+│ │ │ │ ├── lodash._basetostring@3.0.1 
+│ │ │ │ ├── lodash._basevalues@3.0.0 
+│ │ │ │ ├── lodash._isiterateecall@3.0.9 
+│ │ │ │ ├─┬ lodash.escape@3.2.0 
+│ │ │ │ │ └── lodash._root@3.0.1 
+│ │ │ │ ├─┬ lodash.keys@3.1.2 
+│ │ │ │ │ ├── lodash.isarguments@3.1.0 
+│ │ │ │ │ └── lodash.isarray@3.0.4 
+│ │ │ │ ├── lodash.restparam@3.6.1 
+│ │ │ │ └── lodash.templatesettings@3.1.1 
+│ │ │ ├── minimist@1.2.0 
+│ │ │ ├─┬ multipipe@0.1.2 
+│ │ │ │ └─┬ duplexer2@0.0.2 
+│ │ │ │   └─┬ readable-stream@1.1.14 
+│ │ │ │     └── isarray@0.0.1 
+│ │ │ ├── object-assign@3.0.0 
+│ │ │ └─┬ vinyl@0.5.3 
+│ │ │   ├── clone@1.0.2 
+│ │ │   └── clone-stats@0.0.1 
+│ │ ├── object-assign@4.1.0 
+│ │ ├── replace-ext@0.0.1 
+│ │ ├─┬ through2@2.0.3 
+│ │ │ ├─┬ readable-stream@2.2.2 
+│ │ │ │ ├── buffer-shims@1.0.0 
+│ │ │ │ ├── core-util-is@1.0.2 
+│ │ │ │ ├── isarray@1.0.0 
+│ │ │ │ ├── process-nextick-args@1.0.7 
+│ │ │ │ └── string_decoder@0.10.31 
+│ │ │ └── xtend@4.0.1 
+│ │ └── vinyl-sourcemaps-apply@0.2.1 
+│ ├─┬ gulp-beautify@2.0.1 
+│ │ ├─┬ js-beautify@1.6.4 
+│ │ │ ├─┬ config-chain@1.1.11 
+│ │ │ │ ├── ini@1.3.4 
+│ │ │ │ └── proto-list@1.2.4 
+│ │ │ └─┬ editorconfig@0.13.2 
+│ │ │   ├─┬ commander@2.9.0 
+│ │ │   │ └── graceful-readlink@1.0.1 
+│ │ │   ├── lru-cache@3.2.0 
+│ │ │   └── sigmund@1.0.1 
+│ │ └─┬ rcloader@0.2.2 
+│ │   ├── lodash.assign@4.2.0 
+│ │   ├── lodash.isobject@3.0.2 
+│ │   ├── lodash.merge@4.6.0 
+│ │   └─┬ rcfinder@0.1.9 
+│ │     └── lodash.clonedeep@4.5.0 
+│ ├─┬ gulp-eslint@3.0.1 
+│ │ ├── bufferstreams@1.1.1 
+│ │ └─┬ eslint@3.12.1 
+│ │   ├─┬ concat-stream@1.5.2 
+│ │   │ ├── readable-stream@2.0.6 
+│ │   │ └── typedarray@0.0.6 
+│ │   ├── doctrine@1.5.0 
+│ │   ├─┬ escope@3.6.0 
+│ │   │ ├─┬ es6-map@0.1.4 
+│ │   │ │ ├── d@0.1.1 
+│ │   │ │ ├── es5-ext@0.10.12 
+│ │   │ │ ├── es6-iterator@2.0.0 
+│ │   │ │ ├── es6-set@0.1.4 
+│ │   │ │ ├── es6-symbol@3.1.0 
+│ │   │ │ └── event-emitter@0.3.4 
+│ │   │ ├── es6-weak-map@2.0.1 
+│ │   │ ├─┬ esrecurse@4.1.0 
+│ │   │ │ ├── estraverse@4.1.1 
+│ │   │ │ └── object-assign@4.1.0 
+│ │   │ └── estraverse@4.2.0 
+│ │   ├─┬ espree@3.3.2 
+│ │   │ ├── acorn@4.0.3 
+│ │   │ └─┬ acorn-jsx@3.0.1 
+│ │   │   └── acorn@3.3.0 
+│ │   ├── estraverse@4.2.0 
+│ │   ├─┬ file-entry-cache@2.0.0 
+│ │   │ ├─┬ flat-cache@1.2.1 
+│ │   │ │ ├── circular-json@0.3.1 
+│ │   │ │ ├─┬ del@2.2.2 
+│ │   │ │ │ ├── globby@5.0.0 
+│ │   │ │ │ ├── is-path-cwd@1.0.0 
+│ │   │ │ │ ├─┬ is-path-in-cwd@1.0.0 
+│ │   │ │ │ │ └── is-path-inside@1.0.0 
+│ │   │ │ │ └── object-assign@4.1.0 
+│ │   │ │ └── write@0.2.1 
+│ │   │ └── object-assign@4.1.0 
+│ │   ├── ignore@3.2.0 
+│ │   ├── imurmurhash@0.1.4 
+│ │   ├─┬ inquirer@0.12.0 
+│ │   │ ├── cli-width@2.1.0 
+│ │   │ ├── run-async@0.1.0 
+│ │   │ └── string-width@1.0.2 
+│ │   ├─┬ is-my-json-valid@2.15.0 
+│ │   │ ├── generate-function@2.0.0 
+│ │   │ ├─┬ generate-object-property@1.2.0 
+│ │   │ │ └── is-property@1.0.2 
+│ │   │ └── jsonpointer@4.0.0 
+│ │   ├─┬ is-resolvable@1.0.0 
+│ │   │ └── tryit@1.0.3 
+│ │   ├─┬ js-yaml@3.7.0 
+│ │   │ ├── argparse@1.0.9 
+│ │   │ └── esprima@2.7.3 
+│ │   ├─┬ json-stable-stringify@1.0.1 
+│ │   │ └── jsonify@0.0.0 
+│ │   ├─┬ levn@0.3.0 
+│ │   │ ├── prelude-ls@1.1.2 
+│ │   │ └── type-check@0.3.2 
+│ │   ├── natural-compare@1.4.0 
+│ │   ├─┬ optionator@0.8.2 
+│ │   │ ├── deep-is@0.1.3 
+│ │   │ ├── fast-levenshtein@2.0.5 
+│ │   │ └── wordwrap@1.0.0 
+│ │   ├── path-is-inside@1.0.2 
+│ │   ├── pluralize@1.2.1 
+│ │   ├── progress@1.1.8 
+│ │   ├─┬ require-uncached@1.0.3 
+│ │   │ ├─┬ caller-path@0.1.0 
+│ │   │ │ └── callsites@0.2.0 
+│ │   │ └── resolve-from@1.0.1 
+│ │   ├── strip-bom@3.0.0 
+│ │   ├── strip-json-comments@1.0.4 
+│ │   └─┬ table@3.8.3 
+│ │     ├─┬ ajv@4.10.0 
+│ │     │ └── co@4.6.0 
+│ │     ├── ajv-keywords@1.2.0 
+│ │     ├── slice-ansi@0.0.4 
+│ │     └─┬ string-width@2.0.0 
+│ │       └── is-fullwidth-code-point@2.0.0 
+│ ├─┬ gulp-filter@4.0.0 
+│ │ ├─┬ multimatch@2.1.0 
+│ │ │ ├── array-union@1.0.2 
+│ │ │ └── arrify@1.0.1 
+│ │ └── streamfilter@1.0.5 
+│ ├─┬ gulp-tap@0.1.3 
+│ │ └─┬ event-stream@3.1.7 
+│ │   ├── duplexer@0.1.1 
+│ │   ├── from@0.1.3 
+│ │   ├── map-stream@0.1.0 
+│ │   ├── pause-stream@0.0.11 
+│ │   ├── split@0.2.10 
+│ │   ├── stream-combiner@0.0.4 
+│ │   └── through@2.3.8 
+│ ├─┬ insight@0.8.4 
+│ │ ├── async@1.5.2 
+│ │ ├─┬ configstore@1.4.0 
+│ │ │ ├── graceful-fs@4.1.11 
+│ │ │ ├── object-assign@4.1.0 
+│ │ │ ├── osenv@0.1.4 
+│ │ │ ├── uuid@2.0.3 
+│ │ │ └─┬ write-file-atomic@1.2.0 
+│ │ │   └── slide@1.1.6 
+│ │ ├─┬ inquirer@0.10.1 
+│ │ │ ├── ansi-escapes@1.4.0 
+│ │ │ ├─┬ cli-cursor@1.0.2 
+│ │ │ │ └─┬ restore-cursor@1.0.1 
+│ │ │ │   └── exit-hook@1.1.1 
+│ │ │ ├── cli-width@1.1.1 
+│ │ │ ├─┬ figures@1.7.0 
+│ │ │ │ └── object-assign@4.1.0 
+│ │ │ ├── lodash@3.10.1 
+│ │ │ ├─┬ readline2@1.0.1 
+│ │ │ │ ├── code-point-at@1.1.0 
+│ │ │ │ ├── is-fullwidth-code-point@1.0.0 
+│ │ │ │ └── mute-stream@0.0.5 
+│ │ │ ├── run-async@0.1.0 
+│ │ │ └── rx-lite@3.1.2 
+│ │ ├─┬ lodash.debounce@3.1.1 
+│ │ │ └── lodash._getnative@3.9.1 
+│ │ ├── object-assign@4.1.0 
+│ │ ├─┬ os-name@1.0.3 
+│ │ │ ├─┬ osx-release@1.1.0 
+│ │ │ │ └── minimist@1.2.0 
+│ │ │ └── win-release@1.1.1 
+│ │ ├─┬ request@2.79.0 
+│ │ │ ├── aws-sign2@0.6.0 
+│ │ │ ├── aws4@1.5.0 
+│ │ │ ├── caseless@0.11.0 
+│ │ │ ├─┬ combined-stream@1.0.5 
+│ │ │ │ └── delayed-stream@1.0.0 
+│ │ │ ├── extend@3.0.0 
+│ │ │ ├── forever-agent@0.6.1 
+│ │ │ ├─┬ form-data@2.1.2 
+│ │ │ │ └── asynckit@0.4.0 
+│ │ │ ├─┬ har-validator@2.0.6 
+│ │ │ │ └── commander@2.9.0 
+│ │ │ ├─┬ hawk@3.1.3 
+│ │ │ │ ├── boom@2.10.1 
+│ │ │ │ ├── cryptiles@2.0.5 
+│ │ │ │ ├── hoek@2.16.3 
+│ │ │ │ └── sntp@1.0.9 
+│ │ │ ├─┬ http-signature@1.1.1 
+│ │ │ │ ├── assert-plus@0.2.0 
+│ │ │ │ ├─┬ jsprim@1.3.1 
+│ │ │ │ │ ├── extsprintf@1.0.2 
+│ │ │ │ │ ├── json-schema@0.2.3 
+│ │ │ │ │ └── verror@1.3.6 
+│ │ │ │ └─┬ sshpk@1.10.1 
+│ │ │ │   ├── asn1@0.2.3 
+│ │ │ │   ├── assert-plus@1.0.0 
+│ │ │ │   ├── bcrypt-pbkdf@1.0.0 
+│ │ │ │   ├─┬ dashdash@1.14.1 
+│ │ │ │   │ └── assert-plus@1.0.0 
+│ │ │ │   ├── ecc-jsbn@0.1.1 
+│ │ │ │   ├─┬ getpass@0.1.6 
+│ │ │ │   │ └── assert-plus@1.0.0 
+│ │ │ │   ├── jodid25519@1.0.2 
+│ │ │ │   ├── jsbn@0.1.0 
+│ │ │ │   └── tweetnacl@0.14.5 
+│ │ │ ├── is-typedarray@1.0.0 
+│ │ │ ├── isstream@0.1.2 
+│ │ │ ├── json-stringify-safe@5.0.1 
+│ │ │ ├─┬ mime-types@2.1.13 
+│ │ │ │ └── mime-db@1.25.0 
+│ │ │ ├── oauth-sign@0.8.2 
+│ │ │ ├── qs@6.3.0 
+│ │ │ ├── stringstream@0.0.5 
+│ │ │ ├── tunnel-agent@0.4.3 
+│ │ │ └── uuid@3.0.1 
+│ │ ├─┬ tough-cookie@2.3.2 
+│ │ │ └── punycode@1.4.1 
+│ │ └── uuid@3.0.1 
+│ ├── lodash@4.17.2 
+│ ├── semver@5.3.0 
+│ ├─┬ underscore.string@3.3.4 
+│ │ ├── sprintf-js@1.0.3 
+│ │ └── util-deprecate@1.0.2 
+│ ├─┬ yeoman-generator@0.24.1 
+│ │ ├── async@2.1.4 
+│ │ ├─┬ class-extend@0.1.2 
+│ │ │ └── object-assign@2.1.1 
+│ │ ├─┬ cli-table@0.3.1 
+│ │ │ └── colors@1.0.3 
+│ │ ├─┬ cross-spawn@4.0.2 
+│ │ │ ├─┬ lru-cache@4.0.2 
+│ │ │ │ ├── pseudomap@1.0.2 
+│ │ │ │ └── yallist@2.0.0 
+│ │ │ └─┬ which@1.2.12 
+│ │ │   └── isexe@1.1.2 
+│ │ ├─┬ dargs@4.1.0 
+│ │ │ └── number-is-nan@1.0.1 
+│ │ ├─┬ dateformat@1.0.12 
+│ │ │ ├── get-stdin@4.0.1 
+│ │ │ └─┬ meow@3.7.0 
+│ │ │   ├─┬ camelcase-keys@2.1.0 
+│ │ │   │ └── camelcase@2.1.1 
+│ │ │   ├── decamelize@1.2.0 
+│ │ │   ├─┬ loud-rejection@1.6.0 
+│ │ │   │ ├─┬ currently-unhandled@0.4.1 
+│ │ │   │ │ └── array-find-index@1.0.2 
+│ │ │   │ └── signal-exit@3.0.2 
+│ │ │   ├── map-obj@1.0.1 
+│ │ │   ├── minimist@1.2.0 
+│ │ │   ├─┬ normalize-package-data@2.3.5 
+│ │ │   │ ├── hosted-git-info@2.1.5 
+│ │ │   │ ├─┬ is-builtin-module@1.0.0 
+│ │ │   │ │ └── builtin-modules@1.1.1 
+│ │ │   │ └─┬ validate-npm-package-license@3.0.1 
+│ │ │   │   ├─┬ spdx-correct@1.0.2 
+│ │ │   │   │ └── spdx-license-ids@1.2.2 
+│ │ │   │   └── spdx-expression-parse@1.0.4 
+│ │ │   ├── object-assign@4.1.0 
+│ │ │   ├─┬ redent@1.0.0 
+│ │ │   │ ├── indent-string@2.1.0 
+│ │ │   │ └── strip-indent@1.0.1 
+│ │ │   └── trim-newlines@1.0.0 
+│ │ ├── detect-conflict@1.0.1 
+│ │ ├─┬ error@7.0.2 
+│ │ │ └── string-template@0.2.1 
+│ │ ├─┬ find-up@1.1.2 
+│ │ │ └─┬ pinkie-promise@2.0.1 
+│ │ │   └── pinkie@2.0.4 
+│ │ ├─┬ github-username@2.1.0 
+│ │ │ └─┬ gh-got@2.4.0 
+│ │ │   └── object-assign@4.1.0 
+│ │ ├─┬ gruntfile-editor@1.2.1 
+│ │ │ └─┬ ast-query@2.0.0 
+│ │ │   ├─┬ escodegen-wallaby@1.6.8 
+│ │ │   │ ├── estraverse@1.9.3 
+│ │ │   │ └─┬ source-map@0.2.0 
+│ │ │   │   └── amdefine@1.0.1 
+│ │ │   └── traverse@0.6.6 
+│ │ ├─┬ html-wiring@1.2.0 
+│ │ │ ├─┬ cheerio@0.19.0 
+│ │ │ │ ├─┬ css-select@1.0.0 
+│ │ │ │ │ ├── boolbase@1.0.0 
+│ │ │ │ │ ├── css-what@1.0.0 
+│ │ │ │ │ ├── domutils@1.4.3 
+│ │ │ │ │ └── nth-check@1.0.1 
+│ │ │ │ ├─┬ dom-serializer@0.1.0 
+│ │ │ │ │ └── domelementtype@1.1.3 
+│ │ │ │ ├── entities@1.1.1 
+│ │ │ │ ├─┬ htmlparser2@3.8.3 
+│ │ │ │ │ ├── domelementtype@1.3.0 
+│ │ │ │ │ ├── domhandler@2.3.0 
+│ │ │ │ │ ├── domutils@1.5.1 
+│ │ │ │ │ ├── entities@1.0.0 
+│ │ │ │ │ └─┬ readable-stream@1.1.14 
+│ │ │ │ │   └── isarray@0.0.1 
+│ │ │ │ └── lodash@3.10.1 
+│ │ │ └─┬ detect-newline@1.0.3 
+│ │ │   └── minimist@1.2.0 
+│ │ ├─┬ istextorbinary@2.1.0 
+│ │ │ ├── binaryextensions@1.0.1 
+│ │ │ ├── editions@1.3.3 
+│ │ │ └── textextensions@1.0.2 
+│ │ ├─┬ mem-fs-editor@2.3.0 
+│ │ │ ├── commondir@1.0.1 
+│ │ │ ├── deep-extend@0.4.1 
+│ │ │ ├── ejs@2.5.5 
+│ │ │ ├─┬ globby@4.1.0 
+│ │ │ │ ├── glob@6.0.4 
+│ │ │ │ ├── object-assign@4.1.0 
+│ │ │ │ └── pify@2.3.0 
+│ │ │ └── vinyl@1.2.0 
+│ │ ├─┬ nopt@3.0.6 
+│ │ │ └── abbrev@1.0.9 
+│ │ ├── path-exists@2.1.0 
+│ │ ├── pretty-bytes@3.0.1 
+│ │ ├── read-chunk@1.0.1 
+│ │ ├─┬ read-pkg-up@1.0.1 
+│ │ │ └─┬ read-pkg@1.1.0 
+│ │ │   ├── load-json-file@1.1.0 
+│ │ │   └── path-type@1.1.0 
+│ │ ├── rimraf@2.5.4 
+│ │ ├─┬ run-async@2.3.0 
+│ │ │ └── is-promise@2.1.0 
+│ │ ├─┬ shelljs@0.7.5 
+│ │ │ ├── interpret@1.0.1 
+│ │ │ └─┬ rechoir@0.6.2 
+│ │ │   └── resolve@1.1.7 
+│ │ ├── text-table@0.2.0 
+│ │ ├── user-home@2.0.0 
+│ │ ├─┬ yeoman-assert@2.2.1 
+│ │ │ └── lodash@3.10.1 
+│ │ ├─┬ yeoman-environment@1.6.6 
+│ │ │ ├── diff@2.2.3 
+│ │ │ ├── grouped-queue@0.3.3 
+│ │ │ ├─┬ inquirer@1.2.3 
+│ │ │ │ ├─┬ external-editor@1.1.1 
+│ │ │ │ │ ├─┬ spawn-sync@1.0.15 
+│ │ │ │ │ │ └── os-shim@0.1.3 
+│ │ │ │ │ └── tmp@0.0.29 
+│ │ │ │ ├── mute-stream@0.0.6 
+│ │ │ │ └── rx@4.1.0 
+│ │ │ ├── log-symbols@1.0.2 
+│ │ │ ├─┬ mem-fs@1.1.3 
+│ │ │ │ └─┬ vinyl-file@2.0.0 
+│ │ │ │   └─┬ strip-bom-stream@2.0.0 
+│ │ │ │     └── first-chunk-stream@2.0.0 
+│ │ │ └── untildify@2.1.0 
+│ │ └─┬ yeoman-test@1.6.0 
+│ │   └─┬ sinon@1.17.6 
+│ │     ├── formatio@1.1.1 
+│ │     ├── lolex@1.3.2 
+│ │     ├── samsam@1.1.2 
+│ │     └─┬ util@0.10.3 
+│ │       └── inherits@2.0.1 
+│ └── yeoman-welcome@1.0.1 
+├─┬ grunt@1.0.1 
+│ ├── coffee-script@1.10.0 
+│ ├─┬ dateformat@1.0.12 
+│ │ ├── get-stdin@4.0.1 
+│ │ └─┬ meow@3.7.0 
+│ │   ├─┬ camelcase-keys@2.1.0 
+│ │   │ └── camelcase@2.1.1 
+│ │   ├── decamelize@1.2.0 
+│ │   ├─┬ loud-rejection@1.6.0 
+│ │   │ ├─┬ currently-unhandled@0.4.1 
+│ │   │ │ └── array-find-index@1.0.2 
+│ │   │ └── signal-exit@3.0.2 
+│ │   ├── map-obj@1.0.1 
+│ │   ├── minimist@1.2.0 
+│ │   ├─┬ normalize-package-data@2.3.5 
+│ │   │ ├── hosted-git-info@2.1.5 
+│ │   │ ├─┬ is-builtin-module@1.0.0 
+│ │   │ │ └── builtin-modules@1.1.1 
+│ │   │ ├── semver@5.3.0 
+│ │   │ └─┬ validate-npm-package-license@3.0.1 
+│ │   │   ├─┬ spdx-correct@1.0.2 
+│ │   │   │ └── spdx-license-ids@1.2.2 
+│ │   │   └── spdx-expression-parse@1.0.4 
+│ │   ├── object-assign@4.1.0 
+│ │   ├─┬ read-pkg-up@1.0.1 
+│ │   │ ├─┬ find-up@1.1.2 
+│ │   │ │ ├── path-exists@2.1.0 
+│ │   │ │ └─┬ pinkie-promise@2.0.1 
+│ │   │ │   └── pinkie@2.0.4 
+│ │   │ └─┬ read-pkg@1.1.0 
+│ │   │   ├─┬ load-json-file@1.1.0 
+│ │   │   │ ├── graceful-fs@4.1.11 
+│ │   │   │ ├─┬ parse-json@2.2.0 
+│ │   │   │ │ └─┬ error-ex@1.3.0 
+│ │   │   │ │   └── is-arrayish@0.2.1 
+│ │   │   │ ├── pify@2.3.0 
+│ │   │   │ └─┬ strip-bom@2.0.0 
+│ │   │   │   └── is-utf8@0.2.1 
+│ │   │   └── path-type@1.1.0 
+│ │   ├─┬ redent@1.0.0 
+│ │   │ ├─┬ indent-string@2.1.0 
+│ │   │ │ └─┬ repeating@2.0.1 
+│ │   │ │   └─┬ is-finite@1.0.2 
+│ │   │ │     └── number-is-nan@1.0.1 
+│ │   │ └── strip-indent@1.0.1 
+│ │   └── trim-newlines@1.0.0 
+│ ├── eventemitter2@0.4.14 
+│ ├── exit@0.1.2 
+│ ├─┬ findup-sync@0.3.0 
+│ │ └── glob@5.0.15 
+│ ├─┬ glob@7.0.6 
+│ │ ├── fs.realpath@1.0.0 
+│ │ ├─┬ inflight@1.0.6 
+│ │ │ └── wrappy@1.0.2 
+│ │ ├── inherits@2.0.3 
+│ │ └── once@1.4.0 
+│ ├─┬ grunt-cli@1.2.0 
+│ │ ├─┬ findup-sync@0.3.0 
+│ │ │ └─┬ glob@5.0.15 
+│ │ │   ├─┬ inflight@1.0.6 
+│ │ │   │ └── wrappy@1.0.2 
+│ │ │   ├── inherits@2.0.3 
+│ │ │   ├─┬ minimatch@3.0.3 
+│ │ │   │ └─┬ brace-expansion@1.1.6 
+│ │ │   │   ├── balanced-match@0.4.2 
+│ │ │   │   └── concat-map@0.0.1 
+│ │ │   ├── once@1.4.0 
+│ │ │   └── path-is-absolute@1.0.1 
+│ │ ├── grunt-known-options@1.1.0 
+│ │ ├─┬ nopt@3.0.6 
+│ │ │ └── abbrev@1.0.9 
+│ │ └── resolve@1.1.7 
+│ ├── grunt-known-options@1.1.0 
+│ ├─┬ grunt-legacy-log@1.0.0 
+│ │ ├── colors@1.1.2 
+│ │ ├─┬ grunt-legacy-log-utils@1.0.0 
+│ │ │ ├─┬ chalk@1.1.3 
+│ │ │ │ ├── ansi-styles@2.2.1 
+│ │ │ │ ├── escape-string-regexp@1.0.5 
+│ │ │ │ ├─┬ has-ansi@2.0.0 
+│ │ │ │ │ └── ansi-regex@2.0.0 
+│ │ │ │ ├── strip-ansi@3.0.1 
+│ │ │ │ └── supports-color@2.0.0 
+│ │ │ └── lodash@4.3.0 
+│ │ ├── hooker@0.2.3 
+│ │ ├── lodash@3.10.1 
+│ │ └── underscore.string@3.2.3 
+│ ├─┬ grunt-legacy-util@1.0.0 
+│ │ ├── async@1.5.2 
+│ │ ├── getobject@0.1.0 
+│ │ ├── lodash@4.3.0 
+│ │ └─┬ which@1.2.12 
+│ │   └── isexe@1.1.2 
+│ ├── iconv-lite@0.4.15 
+│ ├─┬ js-yaml@3.5.5 
+│ │ ├─┬ argparse@1.0.9 
+│ │ │ └── sprintf-js@1.0.3 
+│ │ └── esprima@2.7.3 
+│ ├─┬ minimatch@3.0.3 
+│ │ └─┬ brace-expansion@1.1.6 
+│ │   ├── balanced-match@0.4.2 
+│ │   └── concat-map@0.0.1 
+│ ├─┬ nopt@3.0.6 
+│ │ └── abbrev@1.0.9 
+│ ├── path-is-absolute@1.0.1 
+│ └── rimraf@2.2.8 
+├─┬ gulp@3.9.1 
+│ ├── archy@1.0.0 
+│ ├─┬ chalk@1.1.3 
+│ │ ├── ansi-styles@2.2.1 
+│ │ ├── escape-string-regexp@1.0.5 
+│ │ ├─┬ has-ansi@2.0.0 
+│ │ │ └── ansi-regex@2.0.0 
+│ │ ├── strip-ansi@3.0.1 
+│ │ └── supports-color@2.0.0 
+│ ├── deprecated@0.0.1 
+│ ├─┬ gulp-util@3.0.7 
+│ │ ├── array-differ@1.0.0 
+│ │ ├── array-uniq@1.0.3 
+│ │ ├── beeper@1.1.1 
+│ │ ├─┬ dateformat@1.0.12 
+│ │ │ ├── get-stdin@4.0.1 
+│ │ │ └─┬ meow@3.7.0 
+│ │ │   ├─┬ camelcase-keys@2.1.0 
+│ │ │   │ └── camelcase@2.1.1 
+│ │ │   ├── decamelize@1.2.0 
+│ │ │   ├─┬ loud-rejection@1.6.0 
+│ │ │   │ ├─┬ currently-unhandled@0.4.1 
+│ │ │   │ │ └── array-find-index@1.0.2 
+│ │ │   │ └── signal-exit@3.0.2 
+│ │ │   ├── map-obj@1.0.1 
+│ │ │   ├─┬ normalize-package-data@2.3.5 
+│ │ │   │ ├── hosted-git-info@2.1.5 
+│ │ │   │ ├─┬ is-builtin-module@1.0.0 
+│ │ │   │ │ └── builtin-modules@1.1.1 
+│ │ │   │ └─┬ validate-npm-package-license@3.0.1 
+│ │ │   │   ├─┬ spdx-correct@1.0.2 
+│ │ │   │   │ └── spdx-license-ids@1.2.2 
+│ │ │   │   └── spdx-expression-parse@1.0.4 
+│ │ │   ├── object-assign@4.1.0 
+│ │ │   ├─┬ read-pkg-up@1.0.1 
+│ │ │   │ ├─┬ find-up@1.1.2 
+│ │ │   │ │ ├── path-exists@2.1.0 
+│ │ │   │ │ └─┬ pinkie-promise@2.0.1 
+│ │ │   │ │   └── pinkie@2.0.4 
+│ │ │   │ └─┬ read-pkg@1.1.0 
+│ │ │   │   ├─┬ load-json-file@1.1.0 
+│ │ │   │   │ ├── graceful-fs@4.1.11 
+│ │ │   │   │ ├─┬ parse-json@2.2.0 
+│ │ │   │   │ │ └─┬ error-ex@1.3.0 
+│ │ │   │   │ │   └── is-arrayish@0.2.1 
+│ │ │   │   │ ├── pify@2.3.0 
+│ │ │   │   │ └── strip-bom@2.0.0 
+│ │ │   │   └── path-type@1.1.0 
+│ │ │   ├─┬ redent@1.0.0 
+│ │ │   │ ├─┬ indent-string@2.1.0 
+│ │ │   │ │ └─┬ repeating@2.0.1 
+│ │ │   │ │   └─┬ is-finite@1.0.2 
+│ │ │   │ │     └── number-is-nan@1.0.1 
+│ │ │   │ └── strip-indent@1.0.1 
+│ │ │   └── trim-newlines@1.0.0 
+│ │ ├─┬ fancy-log@1.2.0 
+│ │ │ └── time-stamp@1.0.1 
+│ │ ├─┬ gulplog@1.0.0 
+│ │ │ └── glogg@1.0.0 
+│ │ ├─┬ has-gulplog@0.1.0 
+│ │ │ └── sparkles@1.0.0 
+│ │ ├── lodash._reescape@3.0.0 
+│ │ ├── lodash._reevaluate@3.0.0 
+│ │ ├── lodash._reinterpolate@3.0.0 
+│ │ ├─┬ lodash.template@3.6.2 
+│ │ │ ├── lodash._basecopy@3.0.1 
+│ │ │ ├── lodash._basetostring@3.0.1 
+│ │ │ ├── lodash._basevalues@3.0.0 
+│ │ │ ├── lodash._isiterateecall@3.0.9 
+│ │ │ ├─┬ lodash.escape@3.2.0 
+│ │ │ │ └── lodash._root@3.0.1 
+│ │ │ ├─┬ lodash.keys@3.1.2 
+│ │ │ │ ├── lodash._getnative@3.9.1 
+│ │ │ │ ├── lodash.isarguments@3.1.0 
+│ │ │ │ └── lodash.isarray@3.0.4 
+│ │ │ ├── lodash.restparam@3.6.1 
+│ │ │ └── lodash.templatesettings@3.1.1 
+│ │ ├─┬ multipipe@0.1.2 
+│ │ │ └─┬ duplexer2@0.0.2 
+│ │ │   └── readable-stream@1.1.14 
+│ │ ├── object-assign@3.0.0 
+│ │ ├── replace-ext@0.0.1 
+│ │ ├─┬ through2@2.0.3 
+│ │ │ ├─┬ readable-stream@2.2.2 
+│ │ │ │ ├── buffer-shims@1.0.0 
+│ │ │ │ ├── core-util-is@1.0.2 
+│ │ │ │ ├── inherits@2.0.3 
+│ │ │ │ ├── isarray@1.0.0 
+│ │ │ │ ├── process-nextick-args@1.0.7 
+│ │ │ │ ├── string_decoder@0.10.31 
+│ │ │ │ └── util-deprecate@1.0.2 
+│ │ │ └── xtend@4.0.1 
+│ │ └─┬ vinyl@0.5.3 
+│ │   ├── clone@1.0.2 
+│ │   └── clone-stats@0.0.1 
+│ ├── interpret@1.0.1 
+│ ├─┬ liftoff@2.3.0 
+│ │ ├── extend@3.0.0 
+│ │ ├─┬ findup-sync@0.4.3 
+│ │ │ ├─┬ detect-file@0.1.0 
+│ │ │ │ └── fs-exists-sync@0.1.0 
+│ │ │ ├─┬ is-glob@2.0.1 
+│ │ │ │ └── is-extglob@1.0.0 
+│ │ │ ├─┬ micromatch@2.3.11 
+│ │ │ │ ├─┬ arr-diff@2.0.0 
+│ │ │ │ │ └── arr-flatten@1.0.1 
+│ │ │ │ ├── array-unique@0.2.1 
+│ │ │ │ ├─┬ braces@1.8.5 
+│ │ │ │ │ ├─┬ expand-range@1.8.2 
+│ │ │ │ │ │ └─┬ fill-range@2.2.3 
+│ │ │ │ │ │   ├── is-number@2.1.0 
+│ │ │ │ │ │   ├─┬ isobject@2.1.0 
+│ │ │ │ │ │   │ └── isarray@1.0.0 
+│ │ │ │ │ │   ├── randomatic@1.1.6 
+│ │ │ │ │ │   └── repeat-string@1.6.1 
+│ │ │ │ │ ├── preserve@0.2.0 
+│ │ │ │ │ └── repeat-element@1.1.2 
+│ │ │ │ ├─┬ expand-brackets@0.1.5 
+│ │ │ │ │ └── is-posix-bracket@0.1.1 
+│ │ │ │ ├── extglob@0.3.2 
+│ │ │ │ ├── filename-regex@2.0.0 
+│ │ │ │ ├─┬ kind-of@3.1.0 
+│ │ │ │ │ └── is-buffer@1.1.4 
+│ │ │ │ ├── normalize-path@2.0.1 
+│ │ │ │ ├─┬ object.omit@2.0.1 
+│ │ │ │ │ ├─┬ for-own@0.1.4 
+│ │ │ │ │ │ └── for-in@0.1.6 
+│ │ │ │ │ └── is-extendable@0.1.1 
+│ │ │ │ ├─┬ parse-glob@3.0.4 
+│ │ │ │ │ ├─┬ glob-base@0.3.0 
+│ │ │ │ │ │ └── glob-parent@2.0.0 
+│ │ │ │ │ └── is-dotfile@1.0.2 
+│ │ │ │ └─┬ regex-cache@0.4.3 
+│ │ │ │   ├── is-equal-shallow@0.1.3 
+│ │ │ │   └── is-primitive@2.0.0 
+│ │ │ └─┬ resolve-dir@0.1.1 
+│ │ │   └─┬ global-modules@0.2.3 
+│ │ │     ├─┬ global-prefix@0.1.5 
+│ │ │     │ ├─┬ homedir-polyfill@1.0.1 
+│ │ │     │ │ └── parse-passwd@1.0.0 
+│ │ │     │ ├── ini@1.3.4 
+│ │ │     │ └─┬ which@1.2.12 
+│ │ │     │   └── isexe@1.1.2 
+│ │ │     └── is-windows@0.2.0 
+│ │ ├─┬ fined@1.0.2 
+│ │ │ ├── expand-tilde@1.2.2 
+│ │ │ ├── lodash.assignwith@4.2.0 
+│ │ │ ├── lodash.isempty@4.4.0 
+│ │ │ ├── lodash.pick@4.4.0 
+│ │ │ └─┬ parse-filepath@1.0.1 
+│ │ │   ├─┬ is-absolute@0.2.6 
+│ │ │   │ └─┬ is-relative@0.2.1 
+│ │ │   │   └─┬ is-unc-path@0.1.2 
+│ │ │   │     └── unc-path-regex@0.1.2 
+│ │ │   ├── map-cache@0.2.2 
+│ │ │   └─┬ path-root@0.1.1 
+│ │ │     └── path-root-regex@0.1.2 
+│ │ ├── flagged-respawn@0.3.2 
+│ │ ├── lodash.isplainobject@4.0.6 
+│ │ ├── lodash.isstring@4.0.1 
+│ │ ├── lodash.mapvalues@4.6.0 
+│ │ ├── rechoir@0.6.2 
+│ │ └── resolve@1.1.7 
+│ ├── minimist@1.2.0 
+│ ├─┬ orchestrator@0.3.8 
+│ │ ├─┬ end-of-stream@0.1.5 
+│ │ │ └─┬ once@1.3.3 
+│ │ │   └── wrappy@1.0.2 
+│ │ ├── sequencify@0.0.7 
+│ │ └── stream-consume@0.1.0 
+│ ├── pretty-hrtime@1.0.3 
+│ ├── semver@4.3.6 
+│ ├─┬ tildify@1.2.0 
+│ │ └── os-homedir@1.0.2 
+│ ├─┬ v8flags@2.0.11 
+│ │ └── user-home@1.1.1 
+│ └─┬ vinyl-fs@0.3.14 
+│   ├── defaults@1.0.3 
+│   ├─┬ glob-stream@3.1.18 
+│   │ ├─┬ glob@4.5.3 
+│   │ │ └── inflight@1.0.6 
+│   │ ├─┬ glob2base@0.0.12 
+│   │ │ └── find-index@0.1.1 
+│   │ ├─┬ minimatch@2.0.10 
+│   │ │ └─┬ brace-expansion@1.1.6 
+│   │ │   ├── balanced-match@0.4.2 
+│   │ │   └── concat-map@0.0.1 
+│   │ ├── ordered-read-streams@0.1.0 
+│   │ ├─┬ through2@0.6.5 
+│   │ │ └── readable-stream@1.0.34 
+│   │ └── unique-stream@1.0.0 
+│   ├─┬ glob-watcher@0.0.6 
+│   │ └─┬ gaze@0.5.2 
+│   │   └─┬ globule@0.1.0 
+│   │     ├─┬ glob@3.1.21 
+│   │     │ ├── graceful-fs@1.2.3 
+│   │     │ └── inherits@1.0.2 
+│   │     ├── lodash@1.0.2 
+│   │     └─┬ minimatch@0.2.14 
+│   │       ├── lru-cache@2.7.3 
+│   │       └── sigmund@1.0.1 
+│   ├─┬ graceful-fs@3.0.11 
+│   │ └── natives@1.1.0 
+│   ├─┬ mkdirp@0.5.1 
+│   │ └── minimist@0.0.8 
+│   ├─┬ strip-bom@1.0.0 
+│   │ ├── first-chunk-stream@1.0.0 
+│   │ └── is-utf8@0.2.1 
+│   ├─┬ through2@0.6.5 
+│   │ └─┬ readable-stream@1.0.34 
+│   │   └── isarray@0.0.1 
+│   └─┬ vinyl@0.4.6 
+│     └── clone@0.2.0 
+├─┬ gulp-cli@1.2.2 
+│ ├── archy@1.0.0 
+│ ├─┬ chalk@1.1.3 
+│ │ ├── ansi-styles@2.2.1 
+│ │ ├── escape-string-regexp@1.0.5 
+│ │ ├─┬ has-ansi@2.0.0 
+│ │ │ └── ansi-regex@2.0.0 
+│ │ ├── strip-ansi@3.0.1 
+│ │ └── supports-color@2.0.0 
+│ ├─┬ fancy-log@1.2.0 
+│ │ └── time-stamp@1.0.1 
+│ ├─┬ gulplog@1.0.0 
+│ │ └─┬ glogg@1.0.0 
+│ │   └── sparkles@1.0.0 
+│ ├── interpret@1.0.1 
+│ ├─┬ liftoff@2.3.0 
+│ │ ├── extend@3.0.0 
+│ │ ├─┬ findup-sync@0.4.3 
+│ │ │ ├─┬ detect-file@0.1.0 
+│ │ │ │ └── fs-exists-sync@0.1.0 
+│ │ │ ├── is-glob@2.0.1 
+│ │ │ └─┬ resolve-dir@0.1.1 
+│ │ │   └─┬ global-modules@0.2.3 
+│ │ │     ├─┬ global-prefix@0.1.5 
+│ │ │     │ ├─┬ homedir-polyfill@1.0.1 
+│ │ │     │ │ └── parse-passwd@1.0.0 
+│ │ │     │ ├── ini@1.3.4 
+│ │ │     │ └─┬ which@1.2.12 
+│ │ │     │   └── isexe@1.1.2 
+│ │ │     └── is-windows@0.2.0 
+│ │ ├─┬ fined@1.0.2 
+│ │ │ ├── expand-tilde@1.2.2 
+│ │ │ ├── lodash.assignwith@4.2.0 
+│ │ │ ├── lodash.isempty@4.4.0 
+│ │ │ ├── lodash.pick@4.4.0 
+│ │ │ └─┬ parse-filepath@1.0.1 
+│ │ │   ├─┬ is-absolute@0.2.6 
+│ │ │   │ └─┬ is-relative@0.2.1 
+│ │ │   │   └─┬ is-unc-path@0.1.2 
+│ │ │   │     └── unc-path-regex@0.1.2 
+│ │ │   ├── map-cache@0.2.2 
+│ │ │   └─┬ path-root@0.1.1 
+│ │ │     └── path-root-regex@0.1.2 
+│ │ ├── flagged-respawn@0.3.2 
+│ │ ├── lodash.mapvalues@4.6.0 
+│ │ ├── rechoir@0.6.2 
+│ │ └── resolve@1.1.7 
+│ ├── lodash.isfunction@3.0.8 
+│ ├── lodash.isplainobject@4.0.6 
+│ ├── lodash.isstring@4.0.1 
+│ ├── lodash.sortby@4.7.0 
+│ ├─┬ matchdep@1.0.1 
+│ │ ├─┬ findup-sync@0.3.0 
+│ │ │ └─┬ glob@5.0.15 
+│ │ │   ├─┬ inflight@1.0.6 
+│ │ │   │ └── wrappy@1.0.2 
+│ │ │   ├── inherits@2.0.3 
+│ │ │   ├─┬ minimatch@3.0.3 
+│ │ │   │ └─┬ brace-expansion@1.1.6 
+│ │ │   │   ├── balanced-match@0.4.2 
+│ │ │   │   └── concat-map@0.0.1 
+│ │ │   ├── once@1.4.0 
+│ │ │   └── path-is-absolute@1.0.1 
+│ │ ├─┬ micromatch@2.3.11 
+│ │ │ ├─┬ arr-diff@2.0.0 
+│ │ │ │ └── arr-flatten@1.0.1 
+│ │ │ ├── array-unique@0.2.1 
+│ │ │ ├─┬ braces@1.8.5 
+│ │ │ │ ├─┬ expand-range@1.8.2 
+│ │ │ │ │ └─┬ fill-range@2.2.3 
+│ │ │ │ │   ├── is-number@2.1.0 
+│ │ │ │ │   ├─┬ isobject@2.1.0 
+│ │ │ │ │   │ └── isarray@1.0.0 
+│ │ │ │ │   ├── randomatic@1.1.6 
+│ │ │ │ │   └── repeat-string@1.6.1 
+│ │ │ │ ├── preserve@0.2.0 
+│ │ │ │ └── repeat-element@1.1.2 
+│ │ │ ├─┬ expand-brackets@0.1.5 
+│ │ │ │ └── is-posix-bracket@0.1.1 
+│ │ │ ├── extglob@0.3.2 
+│ │ │ ├── filename-regex@2.0.0 
+│ │ │ ├── is-extglob@1.0.0 
+│ │ │ ├─┬ kind-of@3.1.0 
+│ │ │ │ └── is-buffer@1.1.4 
+│ │ │ ├── normalize-path@2.0.1 
+│ │ │ ├─┬ object.omit@2.0.1 
+│ │ │ │ ├─┬ for-own@0.1.4 
+│ │ │ │ │ └── for-in@0.1.6 
+│ │ │ │ └── is-extendable@0.1.1 
+│ │ │ ├─┬ parse-glob@3.0.4 
+│ │ │ │ ├─┬ glob-base@0.3.0 
+│ │ │ │ │ └── glob-parent@2.0.0 
+│ │ │ │ └── is-dotfile@1.0.2 
+│ │ │ └─┬ regex-cache@0.4.3 
+│ │ │   ├── is-equal-shallow@0.1.3 
+│ │ │   └── is-primitive@2.0.0 
+│ │ └── stack-trace@0.0.9 
+│ ├── mute-stdout@1.0.0 
+│ ├── pretty-hrtime@1.0.3 
+│ ├─┬ semver-greatest-satisfied-range@1.0.0 
+│ │ ├── semver@4.3.6 
+│ │ └── semver-regex@1.0.0 
+│ ├─┬ tildify@1.2.0 
+│ │ └── os-homedir@1.0.2 
+│ ├─┬ v8flags@2.0.11 
+│ │ └── user-home@1.1.1 
+│ ├─┬ wreck@6.3.0 
+│ │ ├── boom@2.10.1 
+│ │ └── hoek@2.16.3 
+│ └─┬ yargs@3.32.0 
+│   ├── camelcase@2.1.1 
+│   ├─┬ cliui@3.2.0 
+│   │ └── wrap-ansi@2.1.0 
+│   ├── decamelize@1.2.0 
+│   ├─┬ os-locale@1.4.0 
+│   │ └─┬ lcid@1.0.0 
+│   │   └── invert-kv@1.0.0 
+│   ├─┬ string-width@1.0.2 
+│   │ ├── code-point-at@1.1.0 
+│   │ └─┬ is-fullwidth-code-point@1.0.0 
+│   │   └── number-is-nan@1.0.1 
+│   ├── window-size@0.1.4 
+│   └── y18n@3.2.1 
+└─┬ yo@1.8.5 
+  ├── async@1.5.2 
+  ├─┬ chalk@1.1.3 
+  │ ├── ansi-styles@2.2.1 
+  │ ├── escape-string-regexp@1.0.5 
+  │ ├── has-ansi@2.0.0 
+  │ ├── strip-ansi@3.0.1 
+  │ └── supports-color@2.0.0 
+  ├── cli-list@0.1.8 
+  ├─┬ configstore@1.4.0 
+  │ ├── graceful-fs@4.1.11 
+  │ ├─┬ mkdirp@0.5.1 
+  │ │ └── minimist@0.0.8 
+  │ ├── object-assign@4.1.0 
+  │ ├── os-tmpdir@1.0.2 
+  │ ├── osenv@0.1.4 
+  │ ├── uuid@2.0.3 
+  │ ├─┬ write-file-atomic@1.2.0 
+  │ │ ├── imurmurhash@0.1.4 
+  │ │ └── slide@1.1.6 
+  │ └── xdg-basedir@2.0.0 
+  ├─┬ cross-spawn@3.0.1 
+  │ ├─┬ lru-cache@4.0.2 
+  │ │ ├── pseudomap@1.0.2 
+  │ │ └── yallist@2.0.0 
+  │ └─┬ which@1.2.12 
+  │   └── isexe@1.1.2 
+  ├── figures@1.7.0 
+  ├─┬ fullname@2.1.0 
+  │ ├─┬ npmconf@2.1.2 
+  │ │ ├─┬ config-chain@1.1.11 
+  │ │ │ └── proto-list@1.2.4 
+  │ │ ├── inherits@2.0.3 
+  │ │ ├── ini@1.3.4 
+  │ │ ├─┬ nopt@3.0.6 
+  │ │ │ └── abbrev@1.0.9 
+  │ │ ├─┬ once@1.3.3 
+  │ │ │ └── wrappy@1.0.2 
+  │ │ ├── semver@4.3.6 
+  │ │ └── uid-number@0.0.5 
+  │ ├── pify@2.3.0 
+  │ └─┬ pinkie-promise@2.0.1 
+  │   └── pinkie@2.0.4 
+  ├─┬ got@5.7.1 
+  │ ├─┬ create-error-class@3.0.2 
+  │ │ └── capture-stack-trace@1.0.0 
+  │ ├── duplexer2@0.1.4 
+  │ ├── is-redirect@1.0.0 
+  │ ├── is-retry-allowed@1.1.0 
+  │ ├── is-stream@1.1.0 
+  │ ├── lowercase-keys@1.0.0 
+  │ ├── node-status-codes@1.0.0 
+  │ ├─┬ parse-json@2.2.0 
+  │ │ └─┬ error-ex@1.3.0 
+  │ │   └── is-arrayish@0.2.1 
+  │ ├── read-all-stream@3.1.0 
+  │ ├─┬ readable-stream@2.2.2 
+  │ │ ├── buffer-shims@1.0.0 
+  │ │ ├── core-util-is@1.0.2 
+  │ │ ├── isarray@1.0.0 
+  │ │ ├── process-nextick-args@1.0.7 
+  │ │ ├── string_decoder@0.10.31 
+  │ │ └── util-deprecate@1.0.2 
+  │ ├── timed-out@3.0.0 
+  │ ├── unzip-response@1.0.2 
+  │ └─┬ url-parse-lax@1.0.0 
+  │   └── prepend-http@1.0.4 
+  ├─┬ humanize-string@1.0.1 
+  │ └── decamelize@1.2.0 
+  ├─┬ inquirer@0.11.4 
+  │ ├── ansi-escapes@1.4.0 
+  │ ├── ansi-regex@2.0.0 
+  │ ├─┬ cli-cursor@1.0.2 
+  │ │ └─┬ restore-cursor@1.0.1 
+  │ │   └── exit-hook@1.1.1 
+  │ ├── cli-width@1.1.1 
+  │ ├─┬ readline2@1.0.1 
+  │ │ ├── code-point-at@1.1.0 
+  │ │ ├── is-fullwidth-code-point@1.0.0 
+  │ │ └── mute-stream@0.0.5 
+  │ ├── run-async@0.1.0 
+  │ ├── rx-lite@3.1.2 
+  │ ├── string-width@1.0.2 
+  │ └── through@2.3.8 
+  ├─┬ insight@0.7.0 
+  │ ├── inquirer@0.10.1 
+  │ ├─┬ lodash.debounce@3.1.1 
+  │ │ └── lodash._getnative@3.9.1 
+  │ ├─┬ os-name@1.0.3 
+  │ │ ├─┬ osx-release@1.1.0 
+  │ │ │ └── minimist@1.2.0 
+  │ │ └─┬ win-release@1.1.1 
+  │ │   └── semver@5.3.0 
+  │ ├─┬ request@2.79.0 
+  │ │ ├── aws-sign2@0.6.0 
+  │ │ ├── aws4@1.5.0 
+  │ │ ├── caseless@0.11.0 
+  │ │ ├─┬ combined-stream@1.0.5 
+  │ │ │ └── delayed-stream@1.0.0 
+  │ │ ├── extend@3.0.0 
+  │ │ ├── forever-agent@0.6.1 
+  │ │ ├─┬ form-data@2.1.2 
+  │ │ │ └── asynckit@0.4.0 
+  │ │ ├─┬ har-validator@2.0.6 
+  │ │ │ ├─┬ commander@2.9.0 
+  │ │ │ │ └── graceful-readlink@1.0.1 
+  │ │ │ └─┬ is-my-json-valid@2.15.0 
+  │ │ │   ├── generate-function@2.0.0 
+  │ │ │   ├─┬ generate-object-property@1.2.0 
+  │ │ │   │ └── is-property@1.0.2 
+  │ │ │   └── jsonpointer@4.0.0 
+  │ │ ├─┬ hawk@3.1.3 
+  │ │ │ ├── boom@2.10.1 
+  │ │ │ ├── cryptiles@2.0.5 
+  │ │ │ ├── hoek@2.16.3 
+  │ │ │ └── sntp@1.0.9 
+  │ │ ├─┬ http-signature@1.1.1 
+  │ │ │ ├── assert-plus@0.2.0 
+  │ │ │ ├─┬ jsprim@1.3.1 
+  │ │ │ │ ├── extsprintf@1.0.2 
+  │ │ │ │ ├── json-schema@0.2.3 
+  │ │ │ │ └── verror@1.3.6 
+  │ │ │ └─┬ sshpk@1.10.1 
+  │ │ │   ├── asn1@0.2.3 
+  │ │ │   ├── assert-plus@1.0.0 
+  │ │ │   ├── bcrypt-pbkdf@1.0.0 
+  │ │ │   ├─┬ dashdash@1.14.1 
+  │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │   ├── ecc-jsbn@0.1.1 
+  │ │ │   ├─┬ getpass@0.1.6 
+  │ │ │   │ └── assert-plus@1.0.0 
+  │ │ │   ├── jodid25519@1.0.2 
+  │ │ │   ├── jsbn@0.1.0 
+  │ │ │   └── tweetnacl@0.14.5 
+  │ │ ├── is-typedarray@1.0.0 
+  │ │ ├── isstream@0.1.2 
+  │ │ ├── json-stringify-safe@5.0.1 
+  │ │ ├─┬ mime-types@2.1.13 
+  │ │ │ └── mime-db@1.25.0 
+  │ │ ├── oauth-sign@0.8.2 
+  │ │ ├── qs@6.3.0 
+  │ │ ├── stringstream@0.0.5 
+  │ │ ├── tunnel-agent@0.4.3 
+  │ │ └── uuid@3.0.1 
+  │ └─┬ tough-cookie@2.3.2 
+  │   └── punycode@1.4.1 
+  ├── lodash@3.10.1 
+  ├─┬ meow@3.7.0 
+  │ ├─┬ camelcase-keys@2.1.0 
+  │ │ └── camelcase@2.1.1 
+  │ ├─┬ loud-rejection@1.6.0 
+  │ │ ├─┬ currently-unhandled@0.4.1 
+  │ │ │ └── array-find-index@1.0.2 
+  │ │ └── signal-exit@3.0.2 
+  │ ├── map-obj@1.0.1 
+  │ ├── minimist@1.2.0 
+  │ ├─┬ normalize-package-data@2.3.5 
+  │ │ ├── hosted-git-info@2.1.5 
+  │ │ ├─┬ is-builtin-module@1.0.0 
+  │ │ │ └── builtin-modules@1.1.1 
+  │ │ └─┬ validate-npm-package-license@3.0.1 
+  │ │   ├─┬ spdx-correct@1.0.2 
+  │ │   │ └── spdx-license-ids@1.2.2 
+  │ │   └── spdx-expression-parse@1.0.4 
+  │ ├─┬ redent@1.0.0 
+  │ │ ├── indent-string@2.1.0 
+  │ │ └── strip-indent@1.0.1 
+  │ └── trim-newlines@1.0.0 
+  ├─┬ npm-keyword@4.2.0 
+  │ └─┬ registry-url@3.1.0 
+  │   └─┬ rc@1.1.6 
+  │     ├── deep-extend@0.4.1 
+  │     ├── minimist@1.2.0 
+  │     └── strip-json-comments@1.0.4 
+  ├── opn@3.0.3 
+  ├─┬ package-json@2.4.0 
+  │ ├── registry-auth-token@3.1.0 
+  │ └── semver@5.3.0 
+  ├─┬ parse-help@0.1.1 
+  │ └─┬ execall@1.0.0 
+  │   └─┬ clone-regexp@1.0.0 
+  │     ├── is-regexp@1.0.0 
+  │     └── is-supported-regexp-flag@1.0.0 
+  ├─┬ read-pkg-up@1.0.1 
+  │ ├─┬ find-up@1.1.2 
+  │ │ └── path-exists@2.1.0 
+  │ └─┬ read-pkg@1.1.0 
+  │   ├─┬ load-json-file@1.1.0 
+  │   │ └─┬ strip-bom@2.0.0 
+  │   │   └── is-utf8@0.2.1 
+  │   └── path-type@1.1.0 
+  ├─┬ repeating@2.0.1 
+  │ └─┬ is-finite@1.0.2 
+  │   └── number-is-nan@1.0.1 
+  ├─┬ root-check@1.0.0 
+  │ ├─┬ downgrade-root@1.2.2 
+  │ │ ├── default-uid@1.0.0 
+  │ │ └── is-root@1.0.0 
+  │ └─┬ sudo-block@1.2.0 
+  │   └── is-docker@1.1.0 
+  ├─┬ sort-on@1.3.0 
+  │ ├── arrify@1.0.1 
+  │ └─┬ dot-prop@2.4.0 
+  │   └── is-obj@1.0.1 
+  ├── string-length@1.0.1 
+  ├─┬ tabtab@1.3.2 
+  │ ├─┬ debug@2.3.3 
+  │ │ └── ms@0.7.2 
+  │ ├─┬ inquirer@1.2.3 
+  │ │ ├── cli-width@2.1.0 
+  │ │ ├─┬ external-editor@1.1.1 
+  │ │ │ ├─┬ spawn-sync@1.0.15 
+  │ │ │ │ ├─┬ concat-stream@1.5.2 
+  │ │ │ │ │ ├── readable-stream@2.0.6 
+  │ │ │ │ │ └── typedarray@0.0.6 
+  │ │ │ │ └── os-shim@0.1.3 
+  │ │ │ └── tmp@0.0.29 
+  │ │ ├── lodash@4.17.2 
+  │ │ ├── mute-stream@0.0.6 
+  │ │ ├─┬ run-async@2.3.0 
+  │ │ │ └── is-promise@2.1.0 
+  │ │ └── rx@4.1.0 
+  │ ├── minimist@1.2.0 
+  │ └─┬ npmlog@2.0.4 
+  │   ├── ansi@0.3.1 
+  │   ├─┬ are-we-there-yet@1.1.2 
+  │   │ └── delegates@1.0.0 
+  │   └─┬ gauge@1.2.7 
+  │     ├── has-unicode@2.0.1 
+  │     ├── lodash.pad@4.5.1 
+  │     ├── lodash.padend@4.6.1 
+  │     └── lodash.padstart@4.6.1 
+  ├── titleize@1.0.0 
+  ├─┬ update-notifier@0.6.3 
+  │ ├─┬ boxen@0.3.1 
+  │ │ ├── filled-array@1.1.0 
+  │ │ └── widest-line@1.0.0 
+  │ ├─┬ configstore@2.1.0 
+  │ │ └── dot-prop@3.0.0 
+  │ ├── is-npm@1.0.0 
+  │ ├── latest-version@2.0.0 
+  │ └─┬ semver-diff@2.1.0 
+  │   └── semver@5.3.0 
+  ├─┬ user-home@2.0.0 
+  │ └── os-homedir@1.0.2 
+  ├─┬ yeoman-character@1.1.0 
+  │ └─┬ supports-color@3.1.2 
+  │   └── has-flag@1.0.0 
+  ├─┬ yeoman-doctor@2.1.0 
+  │ ├─┬ bin-version-check@2.1.0 
+  │ │ ├─┬ bin-version@1.0.4 
+  │ │ │ └─┬ find-versions@1.2.1 
+  │ │ │   └── semver-regex@1.0.0 
+  │ │ ├── minimist@1.2.0 
+  │ │ └─┬ semver-truncate@1.1.2 
+  │ │   └── semver@5.3.0 
+  │ ├─┬ each-async@1.1.1 
+  │ │ ├── onetime@1.1.0 
+  │ │ └── set-immediate-shim@1.0.1 
+  │ ├── log-symbols@1.0.2 
+  │ ├── object-values@1.0.0 
+  │ ├── semver@5.3.0 
+  │ └─┬ twig@0.8.9 
+  │   ├─┬ minimatch@3.0.3 
+  │   │ └─┬ brace-expansion@1.1.6 
+  │   │   ├── balanced-match@0.4.2 
+  │   │   └── concat-map@0.0.1 
+  │   └─┬ walk@2.3.9 
+  │     └── foreachasync@3.0.0 
+  ├─┬ yeoman-environment@1.6.6 
+  │ ├── diff@2.2.3 
+  │ ├─┬ globby@4.1.0 
+  │ │ ├─┬ array-union@1.0.2 
+  │ │ │ └── array-uniq@1.0.3 
+  │ │ └─┬ glob@6.0.4 
+  │ │   ├── inflight@1.0.6 
+  │ │   └── path-is-absolute@1.0.1 
+  │ ├─┬ grouped-queue@0.3.3 
+  │ │ └── lodash@4.17.2 
+  │ ├─┬ inquirer@1.2.3 
+  │ │ ├── cli-width@2.1.0 
+  │ │ ├── mute-stream@0.0.6 
+  │ │ └── run-async@2.3.0 
+  │ ├── lodash@4.17.2 
+  │ ├─┬ mem-fs@1.1.3 
+  │ │ ├─┬ through2@2.0.3 
+  │ │ │ └── xtend@4.0.1 
+  │ │ ├─┬ vinyl@1.2.0 
+  │ │ │ ├── clone@1.0.2 
+  │ │ │ ├── clone-stats@0.0.1 
+  │ │ │ └── replace-ext@0.0.1 
+  │ │ └─┬ vinyl-file@2.0.0 
+  │ │   └─┬ strip-bom-stream@2.0.0 
+  │ │     └── first-chunk-stream@2.0.0 
+  │ ├── text-table@0.2.0 
+  │ └── untildify@2.1.0 
+  └─┬ yosay@1.2.1 
+    ├── cli-boxes@1.0.0 
+    ├── pad-component@0.0.1 
+    ├─┬ taketalk@1.0.0 
+    │ ├── get-stdin@4.0.1 
+    │ └── minimist@1.2.0 
+    └── wrap-ansi@2.1.0 
+
+ ---> f41a59fa56cf
+Removing intermediate container 0d8c76387325
+Step 7 : RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 &&   sudo touch /etc/apt/sources.list.d/mongodb.list &&   echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee --append /etc/apt/sources.list.d/mongodb.list > /dev/null &&   sudo apt-get update &&   sudo apt-get install -y mongodb-org &&   sudo rm -rf /var/lib/apt/lists/*
+ ---> Running in 66266507b149
+Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.vuan16y9xa --no-auto-check-trustdb --trust-model always --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyring /etc/apt/trusted.gpg.d/git-core-ppa.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+[91mgpg: [0m[91mrequesting key 7F0CEB10 from hkp server keyserver.ubuntu.com
+[0m[91mgpg: [0m[91mkey 7F0CEB10: public key "Richard Kreuter <richard@10gen.com>" imported
+[0m[91mgpg: [0m[91mTotal number processed: 1
+[0m[91mgpg: [0m[91m              imported: 1[0m[91m  (RSA: 1)[0m[91m
+[0mIgn http://downloads-distro.mongodb.org dist InRelease
+Get:1 http://ppa.launchpad.net trusty InRelease [15.4 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://downloads-distro.mongodb.org dist Release.gpg [490 B]
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:4 http://downloads-distro.mongodb.org dist Release [2,040 B]
+Get:5 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:6 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:7 http://ppa.launchpad.net trusty/main amd64 Packages [3,419 B]
+Get:8 http://archive.ubuntu.com trusty-updates/main Sources [480 kB]
+Get:9 http://downloads-distro.mongodb.org dist/10gen amd64 Packages [29.8 kB]
+Get:10 http://archive.ubuntu.com trusty-updates/restricted Sources [5,921 B]
+Get:11 http://archive.ubuntu.com trusty-updates/universe Sources [214 kB]
+Get:12 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1,160 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [20.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [505 kB]
+Get:15 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:16 http://archive.ubuntu.com trusty-security/main Sources [157 kB]
+Get:17 http://archive.ubuntu.com trusty-security/restricted Sources [4,621 B]
+Get:18 http://archive.ubuntu.com trusty-security/universe Sources [54.5 kB]
+Get:19 http://archive.ubuntu.com trusty-security/main amd64 Packages [700 kB]
+Get:20 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [17.0 kB]
+Get:21 http://archive.ubuntu.com trusty-security/universe amd64 Packages [191 kB]
+Get:22 http://archive.ubuntu.com trusty/main Sources [1,335 kB]
+Get:23 http://archive.ubuntu.com trusty/restricted Sources [5,335 B]
+Get:24 http://archive.ubuntu.com trusty/universe Sources [7,926 kB]
+Get:25 http://archive.ubuntu.com trusty/main amd64 Packages [1,743 kB]
+Get:26 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:27 http://archive.ubuntu.com trusty/universe amd64 Packages [7,589 kB]
+Fetched 22.4 MB in 14s (1,569 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+The following NEW packages will be installed:
+  mongodb-org mongodb-org-mongos mongodb-org-server mongodb-org-shell
+  mongodb-org-tools
+0 upgraded, 5 newly installed, 0 to remove and 31 not upgraded.
+Need to get 116 MB of archives.
+After this operation, 293 MB of additional disk space will be used.
+Get:1 http://downloads-distro.mongodb.org/repo/ubuntu-upstart/ dist/10gen mongodb-org-shell amd64 2.6.12 [4,479 kB]
+Get:2 http://downloads-distro.mongodb.org/repo/ubuntu-upstart/ dist/10gen mongodb-org-server amd64 2.6.12 [9,541 kB]
+Get:3 http://downloads-distro.mongodb.org/repo/ubuntu-upstart/ dist/10gen mongodb-org-mongos amd64 2.6.12 [7,214 kB]
+Get:4 http://downloads-distro.mongodb.org/repo/ubuntu-upstart/ dist/10gen mongodb-org-tools amd64 2.6.12 [94.5 MB]
+Get:5 http://downloads-distro.mongodb.org/repo/ubuntu-upstart/ dist/10gen mongodb-org amd64 2.6.12 [3,650 B]
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0m[91mdpkg-preconfigure: unable to re-open stdin: 
+[0mFetched 116 MB in 46s (2,508 kB/s)
+Selecting previously unselected package mongodb-org-shell.
+(Reading database ... 42723 files and directories currently installed.)
+Preparing to unpack .../mongodb-org-shell_2.6.12_amd64.deb ...
+Unpacking mongodb-org-shell (2.6.12) ...
+Selecting previously unselected package mongodb-org-server.
+Preparing to unpack .../mongodb-org-server_2.6.12_amd64.deb ...
+Unpacking mongodb-org-server (2.6.12) ...
+Selecting previously unselected package mongodb-org-mongos.
+Preparing to unpack .../mongodb-org-mongos_2.6.12_amd64.deb ...
+Unpacking mongodb-org-mongos (2.6.12) ...
+Selecting previously unselected package mongodb-org-tools.
+Preparing to unpack .../mongodb-org-tools_2.6.12_amd64.deb ...
+Unpacking mongodb-org-tools (2.6.12) ...
+Selecting previously unselected package mongodb-org.
+Preparing to unpack .../mongodb-org_2.6.12_amd64.deb ...
+Unpacking mongodb-org (2.6.12) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up mongodb-org-shell (2.6.12) ...
+Setting up mongodb-org-server (2.6.12) ...
+Adding system user `mongodb' (UID 103) ...
+Adding new user `mongodb' (UID 103) with group `nogroup' ...
+Not creating home directory `/home/mongodb'.
+Adding group `mongodb' (GID 106) ...
+Done.
+Adding user `mongodb' to group `mongodb' ...
+Adding user mongodb to group mongodb
+Done.
+[91minvoke-rc.d: policy-rc.d denied execution of start.
+[0mSetting up mongodb-org-mongos (2.6.12) ...
+Setting up mongodb-org-tools (2.6.12) ...
+Processing triggers for ureadahead (0.100.0-16) ...
+Setting up mongodb-org (2.6.12) ...
+ ---> 01bef87dea3a
+Removing intermediate container 66266507b149
+Step 8 : VOLUME /data
+ ---> Running in 610ad65800dd
+ ---> 1b7752f693a6
+Removing intermediate container 610ad65800dd
+Step 9 : VOLUME /data/db
+ ---> Running in f969fe679405
+ ---> c44b2c062e71
+Removing intermediate container f969fe679405
+Step 10 : RUN buildDeps='gcc libc6-dev make'     && set -x     && sudo apt-get update && sudo apt-get install -y $buildDeps --no-install-recommends     && sudo rm -rf /var/lib/apt/lists/*     && sudo wget -O redis.tar.gz "$REDIS_DOWNLOAD_URL"     && echo "$REDIS_DOWNLOAD_SHA1 *redis.tar.gz" | sha1sum -c -     && sudo mkdir -p /usr/src/redis     && sudo tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1     && sudo rm redis.tar.gz     && sudo make -C /usr/src/redis     && sudo make -C /usr/src/redis install     && sudo rm -r /usr/src/redis     && sudo apt-get purge -y --auto-remove $buildDeps
+ ---> Running in 0aa922a52684
+[91m+ sudo apt-get update
+[0mIgn http://downloads-distro.mongodb.org dist InRelease
+Get:1 http://ppa.launchpad.net trusty InRelease [15.4 kB]
+Ign http://archive.ubuntu.com trusty InRelease
+Get:2 http://downloads-distro.mongodb.org dist Release.gpg [490 B]
+Get:3 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB]
+Get:4 http://downloads-distro.mongodb.org dist Release [2,040 B]
+Get:5 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]
+Get:6 http://ppa.launchpad.net trusty/main amd64 Packages [3,419 B]
+Get:7 http://archive.ubuntu.com trusty Release.gpg [933 B]
+Get:8 http://downloads-distro.mongodb.org dist/10gen amd64 Packages [29.8 kB]
+Get:9 http://archive.ubuntu.com trusty-updates/main Sources [480 kB]
+Get:10 http://archive.ubuntu.com trusty-updates/restricted Sources [5,921 B]
+Get:11 http://archive.ubuntu.com trusty-updates/universe Sources [214 kB]
+Get:12 http://archive.ubuntu.com trusty-updates/main amd64 Packages [1,160 kB]
+Get:13 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [20.4 kB]
+Get:14 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [505 kB]
+Get:15 http://archive.ubuntu.com trusty-security/main Sources [157 kB]
+Get:16 http://archive.ubuntu.com trusty-security/restricted Sources [4,621 B]
+Get:17 http://archive.ubuntu.com trusty-security/universe Sources [54.5 kB]
+Get:18 http://archive.ubuntu.com trusty-security/main amd64 Packages [700 kB]
+Get:19 http://archive.ubuntu.com trusty-security/restricted amd64 Packages [17.0 kB]
+Get:20 http://archive.ubuntu.com trusty-security/universe amd64 Packages [191 kB]
+Get:21 http://archive.ubuntu.com trusty Release [58.5 kB]
+Get:22 http://archive.ubuntu.com trusty/main Sources [1,335 kB]
+Get:23 http://archive.ubuntu.com trusty/restricted Sources [5,335 B]
+Get:24 http://archive.ubuntu.com trusty/universe Sources [7,926 kB]
+Get:25 http://archive.ubuntu.com trusty/main amd64 Packages [1,743 kB]
+Get:26 http://archive.ubuntu.com trusty/restricted amd64 Packages [16.0 kB]
+Get:27 http://archive.ubuntu.com trusty/universe amd64 Packages [7,589 kB]
+Fetched 22.4 MB in 14s (1,588 kB/s)
+Reading package lists...
+[91m+ sudo apt-get install -y gcc libc6-dev make --no-install-recommends
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+gcc is already the newest version.
+make is already the newest version.
+libc6-dev is already the newest version.
+libc6-dev set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 31 not upgraded.
+[91m+ sudo rm -rf /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_main_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_main_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_Release /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_Release.gpg /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_restricted_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_restricted_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_main_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_main_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_restricted_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_restricted_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_universe_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-security_universe_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty_universe_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_main_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_main_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_restricted_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_restricted_source_Sources.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_universe_binary-amd64_Packages.gz /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-updates_universe_source_Sources.gz /var/lib/apt/lists/downloads-distro.mongodb.org_repo_ubuntu-upstart_dists_dist_10gen_binary-amd64_Packages.gz /var/lib/apt/lists/downloads-distro.mongodb.org_repo_ubuntu-upstart_dists_dist_Release /var/lib/apt/lists/downloads-distro.mongodb.org_repo_ubuntu-upstart_dists_dist_Release.gpg /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/ppa.launchpad.net_git-core_ppa_ubuntu_dists_trusty_InRelease /var/lib/apt/lists/ppa.launchpad.net_git-core_ppa_ubuntu_dists_trusty_main_binary-amd64_Packages.gz
+[0m[91m+ sudo wget -O redis.tar.gz http://download.redis.io/releases/redis-3.2.0.tar.gz
+[0m[91m--2016-12-13 22:44:51--  http://download.redis.io/releases/redis-3.2.0.tar.gz
+[0m[91mResolving download.redis.io (download.redis.io)... [0m[91m109.74.203.151[0m[91m
+[0m[91mConnecting to download.redis.io (download.redis.io)|109.74.203.151|:80... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: [0m[91m1525900[0m[91m (1.5M) [application/x-gzip]
+Saving to: ‘redis.tar.gz’
+
+     0K .......... ...[0m[91m....... ..[0m[91m.......[0m[91m. ..[0m[91m.[0m[91m..[0m[91m.[0m[91m.... ..[0m[91m........  3%  115K 13s
+    50K .......... .......... .......... ........[0m[91m.. ...[0m[91m.[0m[91m......  6%  288K 8s
+   100K .......... .......... .....[0m[91m..... .[0m[91m......... ...[0m[91m..[0m[91m.[0m[91m.... 10%  294K 7s
+   150K .......... .......... ..[0m[91m........[0m[91m ......[0m[91m...[0m[91m. ...[0m[91m.[0m[91m...[0m[91m... 13% 7.11M 5s[0m[91m
+   200K .[0m[91m......... .......... .......[0m[91m... ...[0m[91m....... .......... 16%  294K 5s
+   250K ....[0m[91m...[0m[91m.[0m[91m.. .......... .......... ........[0m[91m.. .......... 20%  312K 4s
+   300K ......[0m[91m...[0m[91m. .....[0m[91m..... .......... ....[0m[91m..[0m[91m.... ...[0m[91m...[0m[91m.[0m[91m... 23%  161K 5s
+   350K ...[0m[91m...[0m[91m..[0m[91m.. .......... .....[0m[91m..[0m[91m... .......... .....[0m[91m...[0m[91m.. 26%  296K 4s
+   400K ..[0m[91m..[0m[91m.[0m[91m.[0m[91m...[0m[91m. .[0m[91m...[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m. ..[0m[91m.[0m[91m..[0m[91m.[0m[91m...[0m[91m. ..[0m[91m.[0m[91m..[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m .......... 30%  297K 4s
+   450K .......... .......... .......... ...[0m[91m.....[0m[91m.. ....[0m[91m...... 33% 7.41M 4s[0m[91m
+   500K .....[0m[91m..... .......... .......... .......... .....[0m[91m...[0m[91m.. 36%  297K 3s
+   550K ....[0m[91m...... ...[0m[91m....... ......[0m[91m.... .......... .......... 40%  306K 3s
+   600K .......[0m[91m...[0m[91m .[0m[91m.....[0m[91m.[0m[91m..[0m[91m.[0m[91m ...[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m.. ....[0m[91m..[0m[91m..[0m[91m..[0m[91m .[0m[91m..[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m.. 43% 3.22M 3s[0m[91m
+   650K .......... .......... .......... .......... ......[0m[91m.... 46%  303K 3s
+   700K .......... ..........[0m[91m .....[0m[91m..[0m[91m..[0m[91m. .......... ......[0m[91m.... 50%  279K 2s
+   750K .......... .......... ........[0m[91m.. ....[0m[91m...[0m[91m... ..[0m[91m........ 53% 2.61M 2s[0m[91m
+   800K .[0m[91m...[0m[91m.[0m[91m...[0m[91m.[0m[91m. .......... .....[0m[91m.[0m[91m..[0m[91m.. .[0m[91m....[0m[91m....[0m[91m. ......[0m[91m.... 57%  292K 2s
+   850K ...[0m[91m...[0m[91m..[0m[91m.[0m[91m. .......... ......[0m[91m.[0m[91m..[0m[91m.[0m[91m ....[0m[91m...[0m[91m... .[0m[91m......[0m[91m... 60%  398K 2s
+   900K .[0m[91m......[0m[91m... .[0m[91m.....[0m[91m.... ...[0m[91m.[0m[91m...[0m[91m.[0m[91m..[0m[91m .[0m[91m...[0m[91m......[0m[91m ....[0m[91m.[0m[91m..[0m[91m... 63%  597K 2s
+   950K .......... ....[0m[91m..[0m[91m..[0m[91m.[0m[91m. .[0m[91m....[0m[91m..... ...[0m[91m.......[0m[91m ..[0m[91m.[0m[91m....... 67%  346K 1s
+  1000K .......... ...[0m[91m....... ...[0m[91m.[0m[91m...[0m[91m..[0m[91m. .........[0m[91m. .[0m[91m.......[0m[91m.. 70%  706K 1s[0m[91m
+  1050K .[0m[91m..[0m[91m...[0m[91m.... ...[0m[91m....[0m[91m...[0m[91m ..[0m[91m..[0m[91m.[0m[91m..[0m[91m...[0m[91m ....[0m[91m...[0m[91m... .[0m[91m...[0m[91m...[0m[91m..[0m[91m. 73%  501K 1s
+  1100K ..[0m[91m...[0m[91m.[0m[91m..[0m[91m.[0m[91m. .[0m[91m.[0m[91m.[0m[91m....... ........[0m[91m.. ..[0m[91m...[0m[91m...[0m[91m.. .....[0m[91m..... 77%  662K 1s
+  1150K ..[0m[91m.....[0m[91m... ...[0m[91m.......[0m[91m ....[0m[91m...[0m[91m..[0m[91m.[0m[91m ....[0m[91m..[0m[91m.[0m[91m.[0m[91m..[0m[91m .[0m[91m...[0m[91m...[0m[91m.[0m[91m.. 80%  366K 1s
+  1200K .......... .[0m[91m......... .[0m[91m...[0m[91m.[0m[91m..[0m[91m... ..[0m[91m......[0m[91m.. .[0m[91m.[0m[91m....[0m[91m...[0m[91m. 83%  521K 1s
+  1250K .....[0m[91m..... .....[0m[91m.[0m[91m..[0m[91m.[0m[91m. .........[0m[91m.[0m[91m ...[0m[91m..[0m[91m..[0m[91m... ..[0m[91m.....[0m[91m... 87%  822K 1s
+  1300K ..[0m[91m........[0m[91m ....[0m[91m.....[0m[91m.[0m[91m ...[0m[91m.[0m[91m..[0m[91m.[0m[91m... .[0m[91m..[0m[91m.......[0m[91m .......... 90%  512K 0s
+  1350K ..[0m[91m........[0m[91m .[0m[91m....[0m[91m....[0m[91m. ..[0m[91m..[0m[91m.[0m[91m....[0m[91m. ..[0m[91m....[0m[91m.... .[0m[91m.....[0m[91m..[0m[91m.. 93%  710K 0s
+  1400K .[0m[91m........[0m[91m. .........[0m[91m. ..[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m..[0m[91m. ..[0m[91m.....[0m[91m..[0m[91m.[0m[91m ...[0m[91m....... 97%  536K 0s
+  1450K ......[0m[91m...[0m[91m.[0m[91m .[0m[91m..[0m[91m.[0m[91m....[0m[91m..[0m[91m ...[0m[91m..[0m[91m..... ..........           100%  667K=3.9s
+
+2016-12-13 22:44:56 (385 KB/s) - ‘redis.tar.gz’ saved [1525900/1525900]
+
+[0m[91m+ sha1sum -c -
++ echo '0c1820931094369c8cc19fc1be62f598bc5961ca *redis.tar.gz'
+[0mredis.tar.gz: OK
+[91m+ sudo mkdir -p /usr/src/redis
+[0m[91m+ sudo tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1
+[0m[91m+ sudo rm redis.tar.gz
+[0m[91m+ sudo make -C /usr/src/redis
+[0mmake: Entering directory `/usr/src/redis'
+cd src && make all
+make[1]: Entering directory `/usr/src/redis/src'
+rm -rf redis-server redis-sentinel redis-cli redis-benchmark redis-check-rdb redis-check-aof *.o *.gcda *.gcno *.gcov redis.info lcov-html
+(cd ../deps && make distclean)
+make[2]: Entering directory `/usr/src/redis/deps'
+(cd hiredis && make clean) > /dev/null || true
+(cd linenoise && make clean) > /dev/null || true
+(cd lua && make clean) > /dev/null || true
+(cd geohash-int && make clean) > /dev/null || true
+(cd jemalloc && [ -f Makefile ] && make distclean) > /dev/null || true
+(rm -f .make-*)
+make[2]: Leaving directory `/usr/src/redis/deps'
+(rm -f .make-*)
+echo STD=-std=c99 -pedantic -DREDIS_STATIC='' >> .make-settings
+echo WARN=-Wall -W >> .make-settings
+echo OPT=-O2 >> .make-settings
+echo MALLOC=jemalloc >> .make-settings
+echo CFLAGS= >> .make-settings
+echo LDFLAGS= >> .make-settings
+echo REDIS_CFLAGS= >> .make-settings
+echo REDIS_LDFLAGS= >> .make-settings
+echo PREV_FINAL_CFLAGS=-std=c99 -pedantic -DREDIS_STATIC='' -Wall -W -O2 -g -ggdb   -I../deps/geohash-int -I../deps/hiredis -I../deps/linenoise -I../deps/lua/src -DUSE_JEMALLOC -I../deps/jemalloc/include >> .make-settings
+echo PREV_FINAL_LDFLAGS=  -g -ggdb -rdynamic >> .make-settings
+(cd ../deps && make hiredis linenoise lua geohash-int jemalloc)
+make[2]: Entering directory `/usr/src/redis/deps'
+(cd hiredis && make clean) > /dev/null || true
+(cd linenoise && make clean) > /dev/null || true
+(cd lua && make clean) > /dev/null || true
+(cd geohash-int && make clean) > /dev/null || true
+(cd jemalloc && [ -f Makefile ] && make distclean) > /dev/null || true
+(rm -f .make-*)
+(echo "" > .make-ldflags)
+(echo "" > .make-cflags)
+[32;1mMAKE[0m [37;1mhiredis[0m
+cd hiredis && make static
+make[3]: Entering directory `/usr/src/redis/deps/hiredis'
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  net.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  hiredis.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  sds.c
+cc -std=c99 -pedantic -c -O3 -fPIC  -Wall -W -Wstrict-prototypes -Wwrite-strings -g -ggdb  async.c
+ar rcs libhiredis.a net.o hiredis.o sds.o async.o
+make[3]: Leaving directory `/usr/src/redis/deps/hiredis'
+[32;1mMAKE[0m [37;1mlinenoise[0m
+cd linenoise && make
+make[3]: Entering directory `/usr/src/redis/deps/linenoise'
+cc  -Wall -Os -g  -c linenoise.c
+make[3]: Leaving directory `/usr/src/redis/deps/linenoise'
+[32;1mMAKE[0m [37;1mlua[0m
+cd lua/src && make all CFLAGS="-O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC='' " MYLDFLAGS="" AR="ar rcu"
+make[3]: Entering directory `/usr/src/redis/deps/lua/src'
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lapi.o lapi.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lcode.o lcode.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ldebug.o ldebug.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ldo.o ldo.c
+[91mldo.c: In function ‘f_parser’:
+[0m[91mldo.c:496:7: warning: unused variable ‘c’ [-Wunused-variable]
+   int c = luaZ_lookahead(p->z);
+       ^
+[0mcc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ldump.o ldump.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lfunc.o lfunc.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lgc.o lgc.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o llex.o llex.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lmem.o lmem.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lobject.o lobject.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lopcodes.o lopcodes.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lparser.o lparser.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lstate.o lstate.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lstring.o lstring.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ltable.o ltable.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ltm.o ltm.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lundump.o lundump.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lvm.o lvm.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lzio.o lzio.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o strbuf.o strbuf.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o fpconv.o fpconv.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lauxlib.o lauxlib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lbaselib.o lbaselib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ldblib.o ldblib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o liolib.o liolib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lmathlib.o lmathlib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o loslib.o loslib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o ltablib.o ltablib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lstrlib.o lstrlib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o loadlib.o loadlib.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o linit.o linit.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lua_cjson.o lua_cjson.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lua_struct.o lua_struct.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lua_cmsgpack.o lua_cmsgpack.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lua_bit.o lua_bit.c
+ar rcu liblua.a lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o strbuf.o fpconv.o lauxlib.o lbaselib.o ldblib.o liolib.o lmathlib.o loslib.o ltablib.o lstrlib.o loadlib.o linit.o lua_cjson.o lua_struct.o lua_cmsgpack.o lua_bit.o	# DLL needs all object files
+ranlib liblua.a
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o lua.o lua.c
+cc -o lua  lua.o liblua.a -lm 
+[91mliblua.a[0m[91m([0m[91mloslib.o[0m[91m)[0m[91m:[0m[91m [0m[91mIn[0m[91m [0m[91mfunction[0m[91m [0m[91m`[0m[91mos_tmpname[0m[91m'[0m[91m:[0m[91m
+loslib.c:(.text+0x29c): warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+[0mcc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o luac.o luac.c
+cc -O2 -Wall -DLUA_ANSI -DENABLE_CJSON_GLOBAL -DREDIS_STATIC=''    -c -o print.o print.c
+cc -o luac  luac.o print.o liblua.a -lm 
+make[3]: Leaving directory `/usr/src/redis/deps/lua/src'
+[32;1mMAKE[0m [37;1mgeohash-int[0m
+cd geohash-int && make
+make[3]: Entering directory `/usr/src/redis/deps/geohash-int'
+cc  -Wall -O2 -g  -c geohash.c
+cc  -Wall -O2 -g  -c geohash_helper.c
+make[3]: Leaving directory `/usr/src/redis/deps/geohash-int'
+[32;1mMAKE[0m [37;1mjemalloc[0m
+cd jemalloc && ./configure --with-jemalloc-prefix=je_ --enable-cc-silence CFLAGS="-std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops " LDFLAGS=""
+checking for xsltproc... false
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking size of void *... 8
+checking size of int... 4
+checking size of long... 8
+checking size of intmax_t... 8
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking whether pause instruction is compilable... yes
+checking for ar... ar
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking whether malloc_usable_size definition can use const argument... no
+checking whether __attribute__ syntax is compilable... yes
+checking whether compiler supports -fvisibility=hidden... yes
+checking whether compiler supports -Werror... yes
+checking whether tls_model attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether alloc_size attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether format(gnu_printf, ...) attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether format(printf, ...) attribute is compilable... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking for ld... /usr/bin/ld
+checking for autoconf... false
+checking for memalign... yes
+checking for valloc... yes
+checking configured backtracing method... N/A
+checking for sbrk... yes
+checking whether utrace(2) is compilable... no
+checking whether valgrind is compilable... no
+checking whether a program using __builtin_ffsl is compilable... yes
+checking LG_PAGE... 12
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_create in -lpthread... yes
+checking for library containing clock_gettime... none required
+checking for secure_getenv... yes
+checking for issetugid... no
+checking for _malloc_thread_cleanup... no
+checking for _pthread_mutex_init_calloc_cb... no
+checking for TLS... yes
+checking whether C11 atomics is compilable... no
+checking whether atomic(9) is compilable... no
+checking whether Darwin OSAtomic*() is compilable... no
+checking whether madvise(2) is compilable... yes
+checking whether to force 32-bit __sync_{add,sub}_and_fetch()... no
+checking whether to force 64-bit __sync_{add,sub}_and_fetch()... no
+checking for __builtin_clz... yes
+checking whether Darwin OSSpin*() is compilable... no
+checking whether glibc malloc hook is compilable... yes
+checking whether glibc memalign hook is compilable... yes
+checking whether pthreads adaptive mutexes is compilable... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating jemalloc.pc
+config.status: creating doc/html.xsl
+config.status: creating doc/manpages.xsl
+config.status: creating doc/jemalloc.xml
+config.status: creating include/jemalloc/jemalloc_macros.h
+config.status: creating include/jemalloc/jemalloc_protos.h
+config.status: creating include/jemalloc/jemalloc_typedefs.h
+config.status: creating include/jemalloc/internal/jemalloc_internal.h
+config.status: creating test/test.sh
+config.status: creating test/include/test/jemalloc_test.h
+config.status: creating config.stamp
+config.status: creating bin/jemalloc-config
+config.status: creating bin/jemalloc.sh
+config.status: creating bin/jeprof
+config.status: creating include/jemalloc/jemalloc_defs.h
+config.status: creating include/jemalloc/internal/jemalloc_internal_defs.h
+config.status: creating test/include/test/jemalloc_test_defs.h
+config.status: executing include/jemalloc/internal/private_namespace.h commands
+config.status: executing include/jemalloc/internal/private_unnamespace.h commands
+config.status: executing include/jemalloc/internal/public_symbols.txt commands
+config.status: executing include/jemalloc/internal/public_namespace.h commands
+config.status: executing include/jemalloc/internal/public_unnamespace.h commands
+config.status: executing include/jemalloc/internal/size_classes.h commands
+config.status: executing include/jemalloc/jemalloc_protos_jet.h commands
+config.status: executing include/jemalloc/jemalloc_rename.h commands
+config.status: executing include/jemalloc/jemalloc_mangle.h commands
+config.status: executing include/jemalloc/jemalloc_mangle_jet.h commands
+config.status: executing include/jemalloc/jemalloc.h commands
+===============================================================================
+jemalloc version   : 4.0.3-0-ge9192eacf8935e29fc62fddc2701f7942b1cc02c
+library revision   : 2
+
+CONFIG             : --with-jemalloc-prefix=je_ --enable-cc-silence 'CFLAGS=-std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops ' LDFLAGS=
+CC                 : gcc
+CFLAGS             : -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -fvisibility=hidden
+CPPFLAGS           :  -D_GNU_SOURCE -D_REENTRANT
+LDFLAGS            : 
+EXTRA_LDFLAGS      : 
+LIBS               :  -lpthread
+TESTLIBS           : 
+RPATH_EXTRA        : 
+
+XSLTPROC           : false
+XSLROOT            : 
+
+PREFIX             : /usr/local
+BINDIR             : /usr/local/bin
+DATADIR            : /usr/local/share
+INCLUDEDIR         : /usr/local/include
+LIBDIR             : /usr/local/lib
+MANDIR             : /usr/local/share/man
+
+srcroot            : 
+abs_srcroot        : /usr/src/redis/deps/jemalloc/
+objroot            : 
+abs_objroot        : /usr/src/redis/deps/jemalloc/
+
+JEMALLOC_PREFIX    : je_
+JEMALLOC_PRIVATE_NAMESPACE
+                   : je_
+install_suffix     : 
+autogen            : 0
+cc-silence         : 1
+debug              : 0
+code-coverage      : 0
+stats              : 1
+prof               : 0
+prof-libunwind     : 0
+prof-libgcc        : 0
+prof-gcc           : 0
+tcache             : 1
+fill               : 1
+utrace             : 0
+valgrind           : 0
+xmalloc            : 0
+munmap             : 0
+lazy_lock          : 0
+tls                : 1
+cache-oblivious    : 1
+===============================================================================
+cd jemalloc && make CFLAGS="-std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops " LDFLAGS="" lib/libjemalloc.a
+make[3]: Entering directory `/usr/src/redis/deps/jemalloc'
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/jemalloc.o src/jemalloc.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/arena.o src/arena.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/atomic.o src/atomic.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/base.o src/base.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bitmap.o src/bitmap.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/chunk.o src/chunk.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/chunk_dss.o src/chunk_dss.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/chunk_mmap.o src/chunk_mmap.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ckh.o src/ckh.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ctl.o src/ctl.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent.o src/extent.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hash.o src/hash.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/huge.o src/huge.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/mb.o src/mb.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/mutex.o src/mutex.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pages.o src/pages.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof.o src/prof.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/quarantine.o src/quarantine.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/rtree.o src/rtree.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/stats.o src/stats.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tcache.o src/tcache.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/util.o src/util.c
+gcc -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops  -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tsd.o src/tsd.c
+ar crus lib/libjemalloc.a src/jemalloc.o src/arena.o src/atomic.o src/base.o src/bitmap.o src/chunk.o src/chunk_dss.o src/chunk_mmap.o src/ckh.o src/ctl.o src/extent.o src/hash.o src/huge.o src/mb.o src/mutex.o src/pages.o src/prof.o src/quarantine.o src/rtree.o src/stats.o src/tcache.o src/util.o src/tsd.o
+make[3]: Leaving directory `/usr/src/redis/deps/jemalloc'
+make[2]: Leaving directory `/usr/src/redis/deps'
+[91m    [34mCC[0m [33madlist.o[0m
+[0m[91m    [34mCC[0m [33mquicklist.o[0m
+[0m[91m    [34mCC[0m [33mae.o[0m
+[0m[91m    [34mCC[0m [33manet.o[0m
+[0m[91m    [34mCC[0m [33mdict.o[0m
+[0m[91m    [34mCC[0m [33mserver.o[0m
+[0m[91m    [34mCC[0m [33msds.o[0m
+[0m[91m    [34mCC[0m [33mzmalloc.o[0m
+[0m[91m    [34mCC[0m [33mlzf_c.o[0m
+[0m[91m    [34mCC[0m [33mlzf_d.o[0m
+[0m[91m    [34mCC[0m [33mpqsort.o[0m
+[0m[91m    [34mCC[0m [33mzipmap.o[0m
+[0m[91m    [34mCC[0m [33msha1.o[0m
+[0m[91m    [34mCC[0m [33mziplist.o[0m
+[0m[91m    [34mCC[0m [33mrelease.o[0m
+[0m[91m    [34mCC[0m [33mnetworking.o[0m
+[0m[91m    [34mCC[0m [33mutil.o[0m
+[0m[91m    [34mCC[0m [33mobject.o[0m
+[0m[91m    [34mCC[0m [33mdb.o[0m
+[0m[91m    [34mCC[0m [33mreplication.o[0m
+[0m[91m    [34mCC[0m [33mrdb.o[0m
+[0m[91m    [34mCC[0m [33mt_string.o[0m
+[0m[91m    [34mCC[0m [33mt_list.o[0m
+[0m[91m    [34mCC[0m [33mt_set.o[0m
+[0m[91m    [34mCC[0m [33mt_zset.o[0m
+[0m[91m    [34mCC[0m [33mt_hash.o[0m
+[0m[91m    [34mCC[0m [33mconfig.o[0m
+[0m[91m    [34mCC[0m [33maof.o[0m
+[0m[91m    [34mCC[0m [33mpubsub.o[0m
+[0m[91m    [34mCC[0m [33mmulti.o[0m
+[0m[91m    [34mCC[0m [33mdebug.o[0m
+[0m[91m    [34mCC[0m [33msort.o[0m
+[0m[91m    [34mCC[0m [33mintset.o[0m
+[0m[91m    [34mCC[0m [33msyncio.o[0m
+[0m[91m    [34mCC[0m [33mcluster.o[0m
+[0m[91m    [34mCC[0m [33mcrc16.o[0m
+[0m[91m    [34mCC[0m [33mendianconv.o[0m
+[0m[91m    [34mCC[0m [33mslowlog.o[0m
+[0m[91m    [34mCC[0m [33mscripting.o[0m
+[0m[91m    [34mCC[0m [33mbio.o[0m
+[0m[91m    [34mCC[0m [33mrio.o[0m
+[0m[91m    [34mCC[0m [33mrand.o[0m
+[0m[91m    [34mCC[0m [33mmemtest.o[0m
+[0m[91m    [34mCC[0m [33mcrc64.o[0m
+[0m[91m    [34mCC[0m [33mbitops.o[0m
+[0m[91m    [34mCC[0m [33msentinel.o[0m
+[0m[91m    [34mCC[0m [33mnotify.o[0m
+[0m[91m    [34mCC[0m [33msetproctitle.o[0m
+[0m[91m    [34mCC[0m [33mblocked.o[0m
+[0m[91m    [34mCC[0m [33mhyperloglog.o[0m
+[0m[91m    [34mCC[0m [33mlatency.o[0m
+[0m[91m    [34mCC[0m [33msparkline.o[0m
+[0m[91m    [34mCC[0m [33mredis-check-rdb.o[0m
+[0m[91m    [34mCC[0m [33mgeo.o[0m
+[0m[91m    [34;1mLINK[0m [37;1mredis-server[0m
+[0m[91m    [34;1mINSTALL[0m [37;1mredis-sentinel[0m
+[0m[91m    [34mCC[0m [33mredis-cli.o[0m
+[0m[91m    [34;1mLINK[0m [37;1mredis-cli[0m
+[0m[91m    [34mCC[0m [33mredis-benchmark.o[0m
+[0m[91m    [34;1mLINK[0m [37;1mredis-benchmark[0m
+[0m[91m    [34;1mINSTALL[0m [37;1mredis-check-rdb[0m
+[0m[91m    [34mCC[0m [33mredis-check-aof.o[0m
+[0m[91m    [34;1mLINK[0m [37;1mredis-check-aof[0m
+[0m
+Hint: It's a good idea to run 'make test' ;)
+
+make[1]: Leaving directory `/usr/src/redis/src'
+make: Leaving directory `/usr/src/redis'
+[91m+ sudo make -C /usr/src/redis install
+[0mmake: Entering directory `/usr/src/redis'
+cd src && make install
+make[1]: Entering directory `/usr/src/redis/src'
+
+Hint: It's a good idea to run 'make test' ;)
+
+[91m    [34;1mINSTALL[0m [37;1minstall[0m
+[0m[91m    [34;1mINSTALL[0m [37;1minstall[0m
+[0m[91m    [34;1mINSTALL[0m [37;1minstall[0m
+[0m[91m    [34;1mINSTALL[0m [37;1minstall[0m
+[0m[91m    [34;1mINSTALL[0m [37;1minstall[0m
+[0mmake[1]: Leaving directory `/usr/src/redis/src'
+make: Leaving directory `/usr/src/redis'
+[91m+ sudo rm -r /usr/src/redis
+[0m[91m+ sudo apt-get purge -y --auto-remove gcc libc6-dev make
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  binutils* build-essential* comerr-dev* cpp* cpp-4.8* dpkg-dev* fakeroot*
+  fontconfig-config* fonts-dejavu-core* g++* g++-4.8* gcc* gcc-4.8*
+  krb5-multidev* libalgorithm-diff-perl* libalgorithm-diff-xs-perl*
+  libalgorithm-merge-perl* libasan0* libatomic1* libc-dev-bin* libc6-dev*
+  libcloog-isl4* libdpkg-perl* libfakeroot* libfile-fcntllock-perl*
+  libfontconfig1* libfreetype6* libgcc-4.8-dev* libgmp10* libgomp1*
+  libgssrpc4* libisl10* libitm1* libkadm5clnt-mit9* libkadm5srv-mit9*
+  libkdb5-7* libkrb5-dev* libmpc3* libmpfr4* libquadmath0* libruby1.9.1-dbg*
+  libssl-dev* libssl-doc* libstdc++-4.8-dev* libtcl8.5* libtcltk-ruby1.9.1*
+  libtimedate-perl* libtk8.5* libtsan0* libxft2* libxrender1* libxss1*
+  linux-libc-dev* make* manpages* manpages-dev* ri1.9.1* ruby-full*
+  ruby1.9.1-dev* ruby1.9.1-examples* ruby1.9.1-full* x11-common* zlib1g-dev*
+0 upgraded, 0 newly installed, 63 to remove and 0 not upgraded.
+After this operation, 167 MB disk space will be freed.
+(Reading database ... 42772 files and directories currently installed.)
+Removing build-essential (11.6ubuntu6) ...
+Removing g++ (4:4.8.2-1ubuntu6) ...
+Removing gcc (4:4.8.2-1ubuntu6) ...
+Removing g++-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Removing gcc-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Removing dpkg-dev (1.17.5ubuntu5.7) ...
+Purging configuration files for dpkg-dev (1.17.5ubuntu5.7) ...
+Removing binutils (2.24-5ubuntu14.1) ...
+Purging configuration files for binutils (2.24-5ubuntu14.1) ...
+Removing libkrb5-dev (1.12+dfsg-2ubuntu5.2) ...
+Removing krb5-multidev (1.12+dfsg-2ubuntu5.2) ...
+Removing comerr-dev (2.1-1.42.9-3ubuntu1.3) ...
+Removing cpp (4:4.8.2-1ubuntu6) ...
+Removing cpp-4.8 (4.8.4-2ubuntu1~14.04.3) ...
+Removing fakeroot (1.20-3ubuntu2) ...
+update-alternatives: using /usr/bin/fakeroot-tcp to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Purging configuration files for fakeroot (1.20-3ubuntu2) ...
+Removing libtcltk-ruby1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Removing libtk8.5:amd64 (8.5.15-2ubuntu3) ...
+Purging configuration files for libtk8.5:amd64 (8.5.15-2ubuntu3) ...
+Removing libxft2:amd64 (2.3.1-2) ...
+Purging configuration files for libxft2:amd64 (2.3.1-2) ...
+Removing libfontconfig1:amd64 (2.11.0-0ubuntu4.2) ...
+Purging configuration files for libfontconfig1:amd64 (2.11.0-0ubuntu4.2) ...
+Removing fontconfig-config (2.11.0-0ubuntu4.2) ...
+Purging configuration files for fontconfig-config (2.11.0-0ubuntu4.2) ...
+Removing fonts-dejavu-core (2.34-1ubuntu1) ...
+Purging configuration files for fonts-dejavu-core (2.34-1ubuntu1) ...
+Removing libalgorithm-merge-perl (0.08-2) ...
+Removing libalgorithm-diff-xs-perl (0.04-2build4) ...
+Removing libalgorithm-diff-perl (1.19.02-3) ...
+Removing libstdc++-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libgcc-4.8-dev:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libasan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libasan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libatomic1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libatomic1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libssl-dev:amd64 (1.0.1f-1ubuntu2.21) ...
+Removing zlib1g-dev:amd64 (1:1.2.8.dfsg-1ubuntu1) ...
+Removing ruby-full (1:1.9.3.4) ...
+Removing ruby1.9.1-full (1.9.3.484-2ubuntu1.2) ...
+Removing ruby1.9.1-dev (1.9.3.484-2ubuntu1.2) ...
+Removing libc6-dev:amd64 (2.19-0ubuntu6.9) ...
+Removing libc-dev-bin (2.19-0ubuntu6.9) ...
+Removing libcloog-isl4:amd64 (0.18.2-1) ...
+Purging configuration files for libcloog-isl4:amd64 (0.18.2-1) ...
+Removing libdpkg-perl (1.17.5ubuntu5.7) ...
+Removing libfakeroot:amd64 (1.20-3ubuntu2) ...
+Purging configuration files for libfakeroot:amd64 (1.20-3ubuntu2) ...
+[91mdpkg: warning: while removing libfakeroot:amd64, directory '/usr/lib/x86_64-linux-gnu/libfakeroot' not empty so not removed
+[0mRemoving libfile-fcntllock-perl (0.14-2build1) ...
+Removing libfreetype6:amd64 (2.5.2-1ubuntu2.5) ...
+Purging configuration files for libfreetype6:amd64 (2.5.2-1ubuntu2.5) ...
+Removing libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Purging configuration files for libmpc3:amd64 (1.0.1-1ubuntu1) ...
+Removing libmpfr4:amd64 (3.1.2-1) ...
+Purging configuration files for libmpfr4:amd64 (3.1.2-1) ...
+Removing libisl10:amd64 (0.12.2-1) ...
+Purging configuration files for libisl10:amd64 (0.12.2-1) ...
+Removing libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Purging configuration files for libgmp10:amd64 (2:5.1.3+dfsg-1ubuntu1) ...
+Removing libgomp1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libgomp1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libkadm5srv-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Purging configuration files for libkadm5srv-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Removing libkdb5-7:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Purging configuration files for libkdb5-7:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Removing libkadm5clnt-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Purging configuration files for libkadm5clnt-mit9:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Removing libgssrpc4:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Purging configuration files for libgssrpc4:amd64 (1.12+dfsg-2ubuntu5.2) ...
+Removing libitm1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libitm1:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libquadmath0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libruby1.9.1-dbg (1.9.3.484-2ubuntu1.2) ...
+Removing libssl-doc (1.0.1f-1ubuntu2.21) ...
+Removing libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Purging configuration files for libtcl8.5:amd64 (8.5.15-2ubuntu1) ...
+Removing libtimedate-perl (2.3000-1) ...
+Removing libtsan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Purging configuration files for libtsan0:amd64 (4.8.4-2ubuntu1~14.04.3) ...
+Removing libxrender1:amd64 (1:0.9.8-1build0.14.04.1) ...
+Purging configuration files for libxrender1:amd64 (1:0.9.8-1build0.14.04.1) ...
+Removing libxss1:amd64 (1:1.2.2-1) ...
+Purging configuration files for libxss1:amd64 (1:1.2.2-1) ...
+Removing linux-libc-dev:amd64 (3.13.0-105.152) ...
+Removing make (3.81-8.2ubuntu3) ...
+Removing manpages-dev (3.54-1ubuntu1) ...
+Removing manpages (3.54-1ubuntu1) ...
+Removing ri1.9.1 (1.9.3.484-2ubuntu1.2) ...
+Removing ruby1.9.1-examples (1.9.3.484-2ubuntu1.2) ...
+Removing x11-common (1:7.7+1ubuntu8.1) ...
+[91minvoke-rc.d: policy-rc.d denied execution of stop.
+[0mPurging configuration files for x11-common (1:7.7+1ubuntu8.1) ...
+[91mdebconf: unable to initialize frontend: Dialog
+[0m[91mdebconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+[0m[91mdebconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+[0m[91mdebconf: (This frontend requires a controlling tty.)
+[0m[91mdebconf: falling back to frontend: Teletype
+[0mProcessing triggers for libc-bin (2.19-0ubuntu6.9) ...
+ ---> e9a4c723c084
+Removing intermediate container 0aa922a52684
+Step 11 : COPY docker-entrypoint.sh /usr/local/bin/
+ ---> c9047942aff6
+Removing intermediate container d140a6d902fa
+Step 12 : RUN sudo chmod +x /usr/local/bin/docker-entrypoint.sh
+ ---> Running in ec2a42f6c5f4
+ ---> ae6b8385d88e
+Removing intermediate container ec2a42f6c5f4
+Step 13 : ENTRYPOINT docker-entrypoint.sh
+ ---> Running in 029e9e872275
+ ---> d57813fad3f4
+Removing intermediate container 029e9e872275
+Step 14 : ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ ---> Running in ce622eebaa8c
+ ---> 4ea7cbdde253
+Removing intermediate container ce622eebaa8c
+Step 15 : ENV PATH $NVM_DIR/v$NODE_VERSION/bin:$PATH
+ ---> Running in b0437a652d3d
+ ---> 4a361799bffe
+Removing intermediate container b0437a652d3d
+Step 16 : EXPOSE 3000 5000 9000 27017 28017 6379
+ ---> Running in a13388c372d8
+ ---> e1df2a13ad9a
+Removing intermediate container a13388c372d8
+Step 17 : WORKDIR /projects
+ ---> Running in a1706fea9e3e
+ ---> dbe0f4b359c5
+Removing intermediate container a1706fea9e3e
+Step 18 : CMD tail -f /dev/null
+ ---> Running in 12221016d322
+ ---> 3b4397cc3128
+Removing intermediate container 12221016d322
+Successfully built 3b4397cc3128
